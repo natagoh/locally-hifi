@@ -4,12 +4,16 @@ import {SearchBar} from 'react-native-elements';
 import {Input} from 'react-native-elements';
 import {Button} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Feather';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
 
 import theme from './../theme.style';
 import BaseButton from './../components/BaseButton';
 import SearchButton from './../components/SearchButton';
 
 const updateSearch = (search) => {};
+
+const Stack = createStackNavigator();
 
 export default function Home() {
   const search = 'test';
@@ -22,7 +26,7 @@ export default function Home() {
         flexDirection: 'column',
         backgroundColor: '#EEFBF8',
       }}>
-      <Button
+      {/* <Button
         buttonStyle={{
           borderRadius: 50,
           borderWidth: 2,
@@ -35,16 +39,20 @@ export default function Home() {
         title="search"
         titleStyle={{color: '#175043'}}
         type="outline"
-      />
+      /> */}
 
-      <BaseButton text="search" />
-
-      <SearchButton
-        buttonStyle={{
-          width: 400,
-          // flex: 1,
-        }}
-      />
+      <View
+        style={{
+          flexDirection: 'row',
+          width: '100%',
+        }}>
+        <SearchButton
+          buttonStyle={{
+            marginHorizontal: 24,
+            flex: 1,
+          }}
+        />
+      </View>
     </SafeAreaView>
   );
 }

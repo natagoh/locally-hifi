@@ -47,6 +47,15 @@ export default function NavBar() {
           backgroundColor: theme.SECONDARY_COLOR,
           paddingTop: 5,
         },
+        // remove default top gray border
+        style: {
+          borderTopColor: theme.SECONDARY_COLOR,
+          elevation: 0, // for Android
+          shadowOffset: {
+            width: 0,
+            height: 0, // for iOS
+          },
+        },
       }}>
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Friends" component={Friends} />
