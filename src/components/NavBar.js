@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/Feather';
 
 import theme from '../theme.style';
 import Home from './../screens/Home';
+import HomeNavigator from './HomeNavigator';
 import Friends from './../screens/Friends';
 import Cards from './../screens/Cards';
 import Chat from './../screens/Chat';
@@ -57,7 +58,7 @@ export default function NavBar() {
           },
         },
       }}>
-      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Home" component={HomeNavigator} />
       <Tab.Screen name="Friends" component={Friends} />
       <Tab.Screen name="Cards" component={Cards} />
       <Tab.Screen name="Chat" component={Chat} />
