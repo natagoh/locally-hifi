@@ -9,7 +9,13 @@ const updateSearch = (search) => {};
 export default function Home() {
   const search = 'test';
   return (
-    <SafeAreaView style={{justifyContent: 'center', alignItems: 'center'}}>
+    <SafeAreaView
+      style={{
+        justifyContent: 'center',
+        alignItems: 'center',
+        flex: 1,
+        backgroundColor: '#EEFBF8',
+      }}>
       <SearchBar
         placeholder="Type Here..."
         onChangeText={updateSearch}

@@ -33,17 +33,18 @@ export default function NavBar() {
             case 'Profile':
               iconName = focused ? 'user' : 'user';
               break;
-            default:
-              iconName = 'home';
           }
 
           return <Icon size={size} color={color} name={iconName} />;
         },
       })}
       tabBarOptions={{
-        activeTintColor: 'tomato',
-        inactiveTintColor: 'gray',
+        activeTintColor: '#175043',
+        inactiveTintColor: '#739990',
         keyboardHidesTabBar: true,
+        tabStyle: {
+          backgroundColor: '#CEE1DD',
+        },
       }}>
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Friends" component={Friends} />
