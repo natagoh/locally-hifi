@@ -2,6 +2,7 @@ import * as React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Feather';
 
+import theme from '../theme.style';
 import Home from './../screens/Home';
 import Friends from './../screens/Friends';
 import Cards from './../screens/Cards';
@@ -39,11 +40,12 @@ export default function NavBar() {
         },
       })}
       tabBarOptions={{
-        activeTintColor: '#175043',
-        inactiveTintColor: '#739990',
+        activeTintColor: theme.PRIMARY_COLOR,
+        inactiveTintColor: theme.PRIMARY_COLOR_DIMMED,
         keyboardHidesTabBar: true,
         tabStyle: {
-          backgroundColor: '#CEE1DD',
+          backgroundColor: theme.SECONDARY_COLOR,
+          paddingTop: 5,
         },
       }}>
       <Tab.Screen name="Home" component={Home} />
