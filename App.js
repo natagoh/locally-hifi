@@ -19,10 +19,10 @@ const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
-    <SafeAreaProvider>
-      <NavigationContainer>
-        <NavBar />
-      </NavigationContainer>
-    </SafeAreaProvider>
+    // <SafeAreaProvider>
+    <NavigationContainer>
+      <NavBar />
+    </NavigationContainer>
+    // </SafeAreaProvider>
   );
 }

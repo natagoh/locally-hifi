@@ -1,8 +1,5 @@
 import * as React from 'react';
 import {Text, SafeAreaView, View} from 'react-native';
-import {SearchBar} from 'react-native-elements';
-import {Input} from 'react-native-elements';
-import {Button} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Feather';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
@@ -18,7 +15,7 @@ const Stack = createStackNavigator();
 export default function Home() {
   const search = 'test';
   return (
-    <SafeAreaView
+    <View
       style={{
         justifyContent: 'center',
         alignItems: 'center',
@@ -53,6 +50,6 @@ export default function Home() {
           }}
         />
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
