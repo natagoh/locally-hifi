@@ -6,7 +6,7 @@ import {Button} from 'react-native-elements';
 
 const updateSearch = (search) => {};
 
-export default function Home() {
+export default function Profile() {
   const search = 'test';
   return (
     <SafeAreaView style={{justifyContent: 'center', alignItems: 'center'}}>
