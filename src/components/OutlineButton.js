@@ -1,17 +1,17 @@
 import * as React from 'react';
 import {StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
-import themeStyle from '../theme.style';
 
+import theme from '../theme.style';
 import BaseButton from './BaseButton';
 
-export default function SearchButton({buttonStyle, onPress, text = 'search'}) {
+export default function OutlineButton({style, onPress, text = 'search'}) {
   return (
     <BaseButton
-      buttonStyle={[styles.defaultStyle, buttonStyle]}
+      style={[styles.defaultStyle, style]}
       text={text}
       textStyle={styles.textStyle}
-      icon={<Icon size={16} color={themeStyle.PRIMARY_COLOR} name={'search'} />}
+      icon={<Icon size={16} color={theme.PRIMARY_COLOR} name={'search'} />}
       onPress={onPress}
     />
   );
@@ -19,13 +19,13 @@ export default function SearchButton({buttonStyle, onPress, text = 'search'}) {
 
 const styles = StyleSheet.create({
   defaultStyle: {
-    borderColor: '#175043',
+    borderColor: theme.PRIMARY_COLOR,
     borderWidth: 2,
     borderRadius: 20,
     padding: 8,
   },
   textStyle: {
-    color: '#175043',
-    fontSize: 16,
+    color: theme.PRIMARY_COLOR,
+    fontSize: theme.FONT_SIZE_MEDIUM,
   },
 });

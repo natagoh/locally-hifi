@@ -8,14 +8,11 @@ import {useFocusEffect} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
 import theme from '../theme.style';
-import SearchButton from './SearchButton';
-
-const updateSearch = (search) => {};
 
 const Stack = createStackNavigator();
 
 export default function HeaderSearch() {
-  const [value, onChangeText] = React.useState('Useless Placeholder');
+  const [value, setValue] = React.useState('');
   const headerSearchRef = React.useRef();
 
   useFocusEffect(
@@ -31,13 +28,13 @@ export default function HeaderSearch() {
     <SafeAreaView>
       <TextInput
         style={styles.searchInput}
-        onChangeText={(text) => onChangeText(text)}
+        onChangeText={(text) => setValue(text)}
         placeholder="search local.ly"
         placeholderTextColor={theme.PRIMARY_COLOR_DIMMED}
         ref={headerSearchRef}
         returnKeyType="search"
         textAlign="left"
-        // value={value}
+        value={value}
       />
     </SafeAreaView>
   );
@@ -47,7 +44,7 @@ const styles = StyleSheet.create({
   searchInput: {
     width: '100%',
     fontWeight: 'bold',
-    fontSize: 18,
+    fontSize: theme.FONT_SIZE_MEDIUM,
     color: theme.PRIMARY_COLOR,
   },
   buttonContainer: {

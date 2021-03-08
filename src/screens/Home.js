@@ -7,7 +7,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
 import theme from './../theme.style';
-import SearchButton from './../components/SearchButton';
+import OutlineButton from '../components/OutlineButton';
 
 const updateSearch = (search) => {};
 
@@ -18,8 +18,8 @@ export default function Home({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.buttonContainer}>
-        <SearchButton
-          buttonStyle={styles.button}
+        <OutlineButton
+          style={styles.button}
           onPress={() => navigation.navigate('Search')}
         />
       </View>
