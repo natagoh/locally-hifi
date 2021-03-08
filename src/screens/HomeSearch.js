@@ -1,28 +1,20 @@
 import * as React from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import {StyleSheet} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-
 import Icon from 'react-native-vector-icons/Feather';
-import {createStackNavigator} from '@react-navigation/stack';
 
 import theme from './../theme.style';
 import PillButton from '../components/PillButton';
 
-const updateSearch = (search) => {};
-
-const Stack = createStackNavigator();
-
 export default function HomeSearch({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
-      {/* <View style={styles.buttonContainer}> */}
       <PillButton
-        icon={<Icon size={16} color={theme.PRIMARY_COLOR} name={'filter'} />}
-        onPress={() => navigation.goBack()}
+        iconLeft={<Icon size={16} color={theme.PRIMARY_COLOR} name="filter" />}
+        onPress={() => navigation.navigate('Filter')}
         style={styles.button}
         text="filter"
       />
-      {/* </View> */}
     </SafeAreaView>
   );
 }
@@ -39,6 +31,7 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: 'row',
     width: '100%',
+    // flex: 1,
   },
   button: {
     alignItems: 'flex-start',

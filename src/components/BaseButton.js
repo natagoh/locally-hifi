@@ -1,11 +1,22 @@
 import * as React from 'react';
-import {StyleSheet, TouchableOpacity, Text, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity} from 'react-native';
+import Icon from 'react-native-vector-icons/Feather';
 
-export default function BaseButton({style, onPress, textStyle, text, icon}) {
+import theme from './../theme.style';
+
+export default function BaseButton({
+  style,
+  onPress,
+  textStyle,
+  text,
+  iconLeft,
+  iconRight,
+}) {
   return (
     <TouchableOpacity onPress={onPress} style={[styles.defaultStyle, style]}>
-      {icon}
-      <Text style={textStyle}> {text} </Text>
+      {iconLeft}
+      <Text style={[styles.defaultTextStyle, textStyle]}>{text}</Text>
+      {iconRight}
     </TouchableOpacity>
   );
 }
@@ -15,5 +26,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     display: 'flex',
     flexDirection: 'row',
+  },
+  defaultTextStyle: {
+    fontFamily: 'Lato',
   },
 });

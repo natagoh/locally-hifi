@@ -5,13 +5,20 @@ import Icon from 'react-native-vector-icons/Feather';
 import theme from '../theme.style';
 import BaseButton from './BaseButton';
 
-export default function OutlineButton({style, onPress, text = 'search'}) {
+export default function OutlineButton({
+  style,
+  iconLeft,
+  iconRight,
+  onPress,
+  text,
+}) {
   return (
     <BaseButton
       style={[styles.defaultStyle, style]}
       text={text}
       textStyle={styles.textStyle}
-      icon={<Icon size={16} color={theme.PRIMARY_COLOR} name={'search'} />}
+      iconLeft={iconLeft}
+      iconRight={iconRight}
       onPress={onPress}
     />
   );
@@ -21,8 +28,8 @@ const styles = StyleSheet.create({
   defaultStyle: {
     borderColor: theme.PRIMARY_COLOR,
     borderWidth: 2,
-    borderRadius: 20,
-    padding: 8,
+    borderRadius: 25,
+    padding: 10,
   },
   textStyle: {
     color: theme.PRIMARY_COLOR,

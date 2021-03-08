@@ -4,13 +4,20 @@ import {StyleSheet} from 'react-native';
 import theme from '../theme.style';
 import BaseButton from './BaseButton';
 
-export default function PillButton({style, icon, onPress, text}) {
+export default function PillButton({
+  style,
+  iconLeft,
+  iconRight,
+  onPress,
+  text,
+}) {
   return (
     <BaseButton
       style={[styles.defaultStyle, style]}
       text={text}
       textStyle={styles.textStyle}
-      icon={icon}
+      iconLeft={iconLeft}
+      iconRight={iconRight}
       onPress={onPress}
     />
   );

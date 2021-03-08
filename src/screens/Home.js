@@ -20,6 +20,10 @@ export default function Home({navigation}) {
       <View style={styles.buttonContainer}>
         <OutlineButton
           style={styles.button}
+          text="search"
+          iconLeft={
+            <Icon size={16} color={theme.PRIMARY_COLOR} name="search" />
+          }
           onPress={() => navigation.navigate('Search')}
         />
       </View>

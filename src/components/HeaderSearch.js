@@ -43,8 +43,9 @@ export default function HeaderSearch() {
 const styles = StyleSheet.create({
   searchInput: {
     width: '100%',
+    fontFamily: 'Lato',
     fontWeight: 'bold',
-    fontSize: theme.FONT_SIZE_MEDIUM,
+    fontSize: theme.FONT_SIZE_LARGE,
     color: theme.PRIMARY_COLOR,
   },
   buttonContainer: {

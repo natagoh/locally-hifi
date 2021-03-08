@@ -6,6 +6,7 @@
  */
 
 module.exports = {
+  assets: ['./assets/fonts'],
   resolver: {
     sourceExts: ['jsx', 'js', 'ts', 'tsx'],
   },
