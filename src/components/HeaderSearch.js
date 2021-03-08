@@ -4,6 +4,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 
 import Icon from 'react-native-vector-icons/Feather';
 import {NavigationContainer} from '@react-navigation/native';
+import {useFocusEffect} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
 import theme from '../theme.style';
@@ -15,11 +16,23 @@ const Stack = createStackNavigator();
 
 export default function HeaderSearch() {
   const [value, onChangeText] = React.useState('Useless Placeholder');
+  const headerSearchRef = React.useRef();
+
+  useFocusEffect(
+    React.useCallback(() => {
+      console.log('search should be focused');
+      headerSearchRef.current.focus();
+      // clean up function when screen is unfocused
+      return () => {};
+    }, []),
+  );
+
   return (
     <SafeAreaView style={styles.container}>
       <TextInput
         style={{height: 40, borderColor: 'gray', borderWidth: 1}}
         onChangeText={(text) => onChangeText(text)}
+        ref={headerSearchRef}
         value={value}
       />
     </SafeAreaView>
