@@ -28,24 +28,27 @@ export default function HeaderSearch() {
   );
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView>
       <TextInput
-        style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+        style={styles.searchInput}
         onChangeText={(text) => onChangeText(text)}
+        placeholder="search local.ly"
+        placeholderTextColor={theme.PRIMARY_COLOR_DIMMED}
         ref={headerSearchRef}
-        value={value}
+        returnKeyType="search"
+        textAlign="left"
+        // value={value}
       />
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    flex: 1,
-    flexDirection: 'column',
-    // backgroundColor: '#EEFBF8',
+  searchInput: {
+    width: '100%',
+    fontWeight: 'bold',
+    fontSize: 18,
+    color: theme.PRIMARY_COLOR,
   },
   buttonContainer: {
     flexDirection: 'row',
