@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/Feather';
 
 import theme from './../theme.style';
 import PillButton from '../components/PillButton';
+import Card from './../components/Card';
 
 export default function HomeSearch({navigation}) {
   return (
@@ -15,6 +16,9 @@ export default function HomeSearch({navigation}) {
         style={styles.button}
         text="filter"
       />
+      <Card />
+      <Card />
+      <Card />
     </SafeAreaView>
   );
 }

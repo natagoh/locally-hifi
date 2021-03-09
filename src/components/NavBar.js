@@ -13,11 +13,7 @@ import Profile from './../screens/Profile';
 const getTabBarVisibility = (route) => {
   const routeName = getFocusedRouteNameFromRoute(route) ?? '';
   const hideTabBarRoutes = ['Search', 'Filter'];
-  if (hideTabBarRoutes.indexOf(routeName) >= 0) {
-    return false;
-  }
-
-  return true;
+  return !(hideTabBarRoutes.indexOf(routeName) >= 0);
 };
 
 const Tab = createBottomTabNavigator();

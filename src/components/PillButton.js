@@ -10,12 +10,13 @@ export default function PillButton({
   iconRight,
   onPress,
   text,
+  textStyle,
 }) {
   return (
     <BaseButton
       style={[styles.defaultStyle, style]}
       text={text}
-      textStyle={styles.textStyle}
+      textStyle={[styles.textStyle, textStyle]}
       iconLeft={iconLeft}
       iconRight={iconRight}
       onPress={onPress}
