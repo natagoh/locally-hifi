@@ -1,14 +1,24 @@
 import * as React from 'react';
+import {getFocusedRouteNameFromRoute} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Feather';
 
 import theme from '../theme.style';
-import Home from './../screens/Home';
 import HomeNavigator from './HomeNavigator';
 import Friends from './../screens/Friends';
 import Cards from './../screens/Cards';
 import Chat from './../screens/Chat';
 import Profile from './../screens/Profile';
+
+const getTabBarVisibility = (route) => {
+  const routeName = getFocusedRouteNameFromRoute(route) ?? '';
+  const hideTabBarRoutes = ['Search', 'Filter'];
+  if (hideTabBarRoutes.indexOf(routeName) >= 0) {
+    return false;
+  }
+
+  return true;
+};
 
 const Tab = createBottomTabNavigator();
 
@@ -58,7 +68,13 @@ export default function NavBar() {
           },
         },
       }}>
-      <Tab.Screen name="Home" component={HomeNavigator} />
+      <Tab.Screen
+        name="Home"
+        component={HomeNavigator}
+        options={({route}) => ({
+          tabBarVisible: getTabBarVisibility(route),
+        })}
+      />
       <Tab.Screen name="Friends" component={Friends} />
       <Tab.Screen name="Cards" component={Cards} />
       <Tab.Screen name="Chat" component={Chat} />
