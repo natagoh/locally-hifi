@@ -14,9 +14,11 @@ export default function BaseButton({
 }) {
   return (
     <TouchableOpacity onPress={onPress} style={[styles.defaultStyle, style]}>
-      {iconLeft}
-      <Text style={[styles.defaultTextStyle, textStyle]}>{text}</Text>
-      {iconRight}
+      <Text style={[styles.defaultTextStyle, textStyle]}>
+        {iconLeft}
+        {text}
+        {iconRight}
+      </Text>
     </TouchableOpacity>
   );
 }

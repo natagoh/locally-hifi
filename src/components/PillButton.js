@@ -26,7 +26,9 @@ export default function PillButton({
 const styles = StyleSheet.create({
   defaultStyle: {
     backgroundColor: theme.SECONDARY_COLOR,
-    borderRadius: 20,
+    borderColor: theme.SECONDARY_COLOR,
+    borderWidth: 2,
+    borderRadius: 25,
     padding: 10,
   },
   textStyle: {

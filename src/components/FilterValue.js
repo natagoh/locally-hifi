@@ -28,7 +28,11 @@ export default function FilterValue({onPress, text, isActive = false}) {
 
 const styles = StyleSheet.create({
   defaultStyle: {
-    borderColor: theme.PRIMARY_COLOR_DIMMED,
+    borderWidth: 1.5,
+    borderRadius: 25,
+    padding: 6,
+    marginRight: 8,
+    marginBottom: 8,
   },
   textStyle: {
     color: theme.PRIMARY_COLOR_DIMMED,

@@ -1,15 +1,43 @@
 import * as React from 'react';
-import {Text, SafeAreaView, StyleSheet} from 'react-native';
+import {SafeAreaView, StyleSheet, View} from 'react-native';
+import Slider from '@react-native-community/slider';
 
 import theme from './../theme.style';
 import FilterValue from './../components/FilterValue';
+import FilterHeading from './../components/FilterHeading';
+
+const FILTERS = [
+  'asian-owned',
+  'black-owned',
+  'direct to consumer',
+  'eco-friendly',
+  'female-owned',
+  'minority-owned',
+];
 
 export default function HomeFilter() {
   return (
     <SafeAreaView style={styles.container}>
-      <Text>filter!</Text>
-      <FilterValue text="i am a filter" />
-      <FilterValue text="i am a filter" isActive={true} />
+      <FilterHeading text="business values" />
+      <View style={styles.valuesContainer}>
+        {FILTERS.map((filter, index) => (
+          <FilterValue text={filter} key={index} />
+        ))}
+      </View>
+      <FilterHeading text="product values" />
+      <View style={styles.valuesContainer}>
+        {FILTERS.map((filter, index) => (
+          <FilterValue text={filter} key={index} />
+        ))}
+      </View>
+      <FilterHeading text="distance" />
+      <Slider
+        maximumValue={100}
+        minimumValue={0}
+        step={1}
+        value={67}
+        style={styles.slider}
+      />
     </SafeAreaView>
   );
 }
@@ -19,16 +47,19 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     flexDirection: 'column',
+    // flexWrap: 'wrap',
     flex: 1,
     backgroundColor: theme.BACKGROUND_COLOR,
     padding: theme.PADDING_MEDIUM,
   },
-  buttonContainer: {
-    flexDirection: 'row',
-    // width: '100%',
-    flex: 1,
-  },
-  button: {
+  valuesContainer: {
+    justifyContent: 'flex-start',
     alignItems: 'flex-start',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    // flex: 1,
+  },
+  slider: {
+    width: '100%',
   },
 });
