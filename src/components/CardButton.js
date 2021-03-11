@@ -26,6 +26,6 @@ const styles = StyleSheet.create({
   text: {
     fontSize: theme.FONT_SIZE_MEDIUM,
     fontWeight: 'normal',
-    color: theme.PRIMARY_COLOR,
+    color: 'black',
   },
 });

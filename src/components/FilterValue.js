@@ -6,8 +6,22 @@ import theme from '../theme.style';
 import OutlineButton from './OutlineButton';
 import PillButton from './PillButton';
 
-export default function FilterValue({onPress, text, isActive = false}) {
-  return isActive ? (
+// isActive = true if the filter value is active in the filters screen
+// isDisplay = true if the filter value is just for display purposes (like on CardBody.js)
+export default function FilterValue({
+  onPress,
+  text,
+  isActive = false,
+  isDisplay = false,
+}) {
+  return isDisplay ? (
+    <PillButton
+      style={[styles.defaultStyle]}
+      text={text}
+      textStyle={[styles.textStyle, styles.displayPillText]}
+      onPress={onPress}
+    />
+  ) : isActive ? (
     <PillButton
       style={[styles.defaultStyle]}
       text={text}
@@ -45,5 +59,8 @@ const styles = StyleSheet.create({
   },
   pillText: {
     color: theme.PRIMARY_COLOR,
+  },
+  displayPillText: {
+    fontWeight: 'normal',
   },
 });

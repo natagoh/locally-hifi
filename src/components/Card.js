@@ -48,6 +48,7 @@ export default function Card() {
 
 const styles = StyleSheet.create({
   container: {
+    display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'space-between',
