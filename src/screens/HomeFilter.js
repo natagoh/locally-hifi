@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     // flexWrap: 'wrap',
     flex: 1,
     backgroundColor: theme.BACKGROUND_COLOR,
-    padding: theme.PADDING_MEDIUM,
+    padding: theme.SPACING_MEDIUM,
   },
   valuesContainer: {
     justifyContent: 'flex-start',

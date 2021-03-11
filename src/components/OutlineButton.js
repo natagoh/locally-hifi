@@ -7,6 +7,7 @@ import BaseButton from './BaseButton';
 
 export default function OutlineButton({
   style,
+  textStyle,
   iconLeft,
   iconRight,
   onPress,
@@ -16,7 +17,7 @@ export default function OutlineButton({
     <BaseButton
       style={[styles.defaultStyle, style]}
       text={text}
-      textStyle={styles.textStyle}
+      textStyle={[styles.textStyle, textStyle]}
       iconLeft={iconLeft}
       iconRight={iconRight}
       onPress={onPress}

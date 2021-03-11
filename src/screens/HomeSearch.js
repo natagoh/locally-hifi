@@ -11,10 +11,17 @@ export default function HomeSearch({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
       <PillButton
-        iconLeft={<Icon size={16} color={theme.PRIMARY_COLOR} name="filter" />}
+        iconLeft={
+          <Icon
+            size={theme.FONT_SIZE_LARGE}
+            color={theme.PRIMARY_COLOR}
+            name="filter"
+          />
+        }
         onPress={() => navigation.navigate('Filter')}
-        style={styles.button}
         text="filter"
+        style={styles.filterButton}
+        textStyle={styles.filterButtonText}
       />
       <Card />
       <Card />
@@ -30,14 +37,16 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     backgroundColor: theme.BACKGROUND_COLOR,
-    padding: theme.PADDING_MEDIUM,
+    padding: theme.SPACING_MEDIUM,
   },
   buttonContainer: {
     flexDirection: 'row',
     width: '100%',
-    // flex: 1,
   },
-  button: {
+  filterButton: {
     alignItems: 'flex-start',
+  },
+  filterButtonText: {
+    fontSize: theme.FONT_SIZE_LARGE,
   },
 });

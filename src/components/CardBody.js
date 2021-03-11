@@ -6,23 +6,20 @@ import PillButton from './PillButton';
 
 export default function CardBody({text, icon, onPress}) {
   return (
-    <View>
-      <Text>Title</Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>Title</Text>
       <Text>23 friends who trust</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  button: {
-    backgroundColor: theme.CARD_BUTTON_COLOR,
-    borderRadius: 5,
-    borderWidth: 0,
+  container: {
+    marginLeft: theme.SPACING_MEDIUM,
   },
-  text: {
-    fontSize: theme.FONT_SIZE_MEDIUM,
-    fontWeight: 'normal',
-    color: theme.PRIMARY_COLOR,
-    marginRight: 8,
+  title: {
+    fontFamily: 'Lato',
+    fontSize: theme.FONT_SIZE_LARGE,
+    fontWeight: 'bold',
   },
 });

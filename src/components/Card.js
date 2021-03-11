@@ -38,8 +38,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
 
-    marginVertical: theme.PADDING_MEDIUM,
-    padding: theme.PADDING_MEDIUM,
+    marginVertical: theme.SPACING_MEDIUM,
+    padding: theme.SPACING_MEDIUM,
     backgroundColor: theme.CARD_BACKGROUND_COLOR,
 
     width: '100%',

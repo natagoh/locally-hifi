@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginVertical: theme.PADDING_MEDIUM,
+    marginVertical: theme.SPACING_MEDIUM,
   },
   text: {
     fontFamily: 'Lato',

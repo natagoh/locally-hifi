@@ -22,9 +22,14 @@ export default function Home({navigation}) {
           style={styles.button}
           text="search"
           iconLeft={
-            <Icon size={16} color={theme.PRIMARY_COLOR} name="search" />
+            <Icon
+              size={theme.FONT_SIZE_LARGE}
+              color={theme.PRIMARY_COLOR}
+              name="search"
+            />
           }
           onPress={() => navigation.navigate('Search')}
+          textStyle={styles.buttonText}
         />
       </View>
     </SafeAreaView>
@@ -44,7 +49,11 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   button: {
-    marginHorizontal: 24,
+    marginHorizontal: theme.SPACING_LARGE,
     flex: 1,
+  },
+  buttonText: {
+    fontSize: theme.FONT_SIZE_LARGE,
+    fontWeight: 'bold',
   },
 });
