@@ -1,8 +1,7 @@
 import * as React from 'react';
-import {Dimensions, Text, View, StyleSheet} from 'react-native';
+import {Text, View, StyleSheet} from 'react-native';
 
 import theme from './../theme.style';
-import PillButton from './PillButton';
 
 export default function CardBody({text, icon, onPress}) {
   return (

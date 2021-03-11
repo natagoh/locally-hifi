@@ -1,9 +1,7 @@
 import * as React from 'react';
-import {Text, TextInput, View, StyleSheet} from 'react-native';
+import {TextInput, StyleSheet} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
-import Icon from 'react-native-vector-icons/Feather';
-import {NavigationContainer} from '@react-navigation/native';
 import {useFocusEffect} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 

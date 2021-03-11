@@ -1,10 +1,9 @@
 import * as React from 'react';
-import {Dimensions, Text, Image, View, StyleSheet} from 'react-native';
+import {Dimensions, Image, View, StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
 import theme from './../theme.style';
 import CardBody from './CardBody';
-import CardButton from './CardButton';
 import CardButtonGroup from './CardButtonGroup';
 
 export default function Card() {

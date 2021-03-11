@@ -1,6 +1,5 @@
 import * as React from 'react';
 import {StyleSheet} from 'react-native';
-import Icon from 'react-native-vector-icons/Feather';
 
 import theme from '../theme.style';
 import BaseButton from './BaseButton';

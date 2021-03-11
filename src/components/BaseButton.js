@@ -1,8 +1,5 @@
 import * as React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import Icon from 'react-native-vector-icons/Feather';
-
-import theme from './../theme.style';
 
 export default function BaseButton({
   style,
