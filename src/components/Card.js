@@ -19,12 +19,22 @@ export default function Card() {
       <View style={styles.buttonGroup}>
         <CardButton
           text="save card"
-          icon={<Icon size={16} color={theme.PRIMARY_COLOR} name="pocket" />}
+          icon={
+            <Icon
+              size={theme.FONT_SIZE_MEDIUM}
+              color={theme.PRIMARY_COLOR}
+              name="pocket"
+            />
+          }
         />
         <CardButton
           text="navigate"
           icon={
-            <Icon size={16} color={theme.PRIMARY_COLOR} name="navigation" />
+            <Icon
+              size={theme.FONT_SIZE_MEDIUM}
+              color={theme.PRIMARY_COLOR}
+              name="navigation"
+            />
           }
         />
       </View>

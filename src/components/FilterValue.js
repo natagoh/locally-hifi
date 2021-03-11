@@ -11,16 +11,18 @@ export default function FilterValue({onPress, text, isActive = false}) {
     <PillButton
       style={[styles.defaultStyle]}
       text={text}
-      textStyle={styles.textStyle}
+      textStyle={[styles.textStyle, styles.pillText]}
       iconRight={<Icon size={16} color={theme.PRIMARY_COLOR} name="x" />}
       onPress={onPress}
     />
   ) : (
     <OutlineButton
-      style={[styles.defaultStyle]}
+      style={[styles.defaultStyle, styles.outlineButton]}
       text={text}
       textStyle={styles.textStyle}
-      iconRight={<Icon size={16} color={theme.PRIMARY_COLOR} name="plus" />}
+      iconRight={
+        <Icon size={16} color={theme.PRIMARY_COLOR_DIMMED} name="plus" />
+      }
       onPress={onPress}
     />
   );
@@ -34,8 +36,14 @@ const styles = StyleSheet.create({
     marginRight: 8,
     marginBottom: 8,
   },
+  outlineButton: {
+    borderColor: theme.PRIMARY_COLOR_DIMMED,
+  },
   textStyle: {
     color: theme.PRIMARY_COLOR_DIMMED,
     fontSize: theme.FONT_SIZE_SMALL,
+  },
+  pillText: {
+    color: theme.PRIMARY_COLOR,
   },
 });

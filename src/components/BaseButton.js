@@ -9,15 +9,23 @@ export default function BaseButton({
   onPress,
   textStyle,
   text,
-  iconLeft,
-  iconRight,
+  iconLeft = null,
+  iconRight = null,
 }) {
   return (
     <TouchableOpacity onPress={onPress} style={style}>
       <View style={styles.container}>
-        {iconLeft ? <View style={styles.iconLeft}>{iconLeft}</View> : null}
-        <Text style={[styles.defaultTextStyle, textStyle]}>{text}</Text>
-        {iconRight ? <View style={styles.iconRight}>{iconRight}</View> : null}
+        {iconLeft}
+        <Text
+          style={[
+            styles.defaultTextStyle,
+            textStyle,
+            iconLeft ? styles.iconLeft : null,
+            iconRight ? styles.iconRight : null,
+          ]}>
+          {text}
+        </Text>
+        {iconRight}
       </View>
     </TouchableOpacity>
   );
@@ -33,9 +41,9 @@ const styles = StyleSheet.create({
     fontFamily: 'Lato',
   },
   iconLeft: {
-    paddingRight: 4,
+    paddingLeft: 4,
   },
   iconRight: {
-    paddingLeft: 4,
+    paddingRight: 4,
   },
 });

@@ -21,11 +21,11 @@ const styles = StyleSheet.create({
     backgroundColor: theme.CARD_BUTTON_COLOR,
     borderRadius: 5,
     borderWidth: 0,
+    padding: 8,
   },
   text: {
     fontSize: theme.FONT_SIZE_MEDIUM,
     fontWeight: 'normal',
     color: theme.PRIMARY_COLOR,
-    marginRight: 8,
   },
 });

@@ -47,7 +47,6 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     flexDirection: 'column',
-    // flexWrap: 'wrap',
     flex: 1,
     backgroundColor: theme.BACKGROUND_COLOR,
     padding: theme.SPACING_MEDIUM,
@@ -57,7 +56,6 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     flexDirection: 'row',
     flexWrap: 'wrap',
-    // flex: 1,
   },
   slider: {
     width: '100%',
