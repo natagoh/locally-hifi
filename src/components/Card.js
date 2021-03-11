@@ -5,8 +5,34 @@ import Icon from 'react-native-vector-icons/Feather';
 import theme from './../theme.style';
 import CardBody from './CardBody';
 import CardButton from './CardButton';
+import CardButtonGroup from './CardButtonGroup';
 
 export default function Card() {
+  const cardButtonData = [
+    {
+      text: 'save card',
+      icon: (
+        <Icon
+          size={theme.FONT_SIZE_MEDIUM}
+          color={theme.PRIMARY_COLOR}
+          name="pocket"
+        />
+      ),
+      onPress: null,
+    },
+    {
+      text: 'navigate',
+      icon: (
+        <Icon
+          size={theme.FONT_SIZE_MEDIUM}
+          color={theme.PRIMARY_COLOR}
+          name="navigation"
+        />
+      ),
+      onPress: null,
+    },
+  ];
+
   return (
     <View style={styles.container}>
       <View style={styles.cardInfo}>
@@ -16,28 +42,7 @@ export default function Card() {
         />
         <CardBody />
       </View>
-      <View style={styles.buttonGroup}>
-        <CardButton
-          text="save card"
-          icon={
-            <Icon
-              size={theme.FONT_SIZE_MEDIUM}
-              color={theme.PRIMARY_COLOR}
-              name="pocket"
-            />
-          }
-        />
-        <CardButton
-          text="navigate"
-          icon={
-            <Icon
-              size={theme.FONT_SIZE_MEDIUM}
-              color={theme.PRIMARY_COLOR}
-              name="navigation"
-            />
-          }
-        />
-      </View>
+      <CardButtonGroup data={cardButtonData} />
     </View>
   );
 }
@@ -64,11 +69,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
-  },
-  buttonGroup: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignSelf: 'flex-end',
   },
   img: {
     width: 128,

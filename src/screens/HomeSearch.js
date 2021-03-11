@@ -13,7 +13,7 @@ export default function HomeSearch({navigation}) {
       <PillButton
         iconLeft={
           <Icon
-            size={theme.FONT_SIZE_LARGE}
+            size={theme.FONT_SIZE_MEDIUM}
             color={theme.PRIMARY_COLOR}
             name="filter"
           />
@@ -47,6 +47,6 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
   },
   filterButtonText: {
-    fontSize: theme.FONT_SIZE_LARGE,
+    fontSize: theme.FONT_SIZE_MEDIUM,
   },
 });

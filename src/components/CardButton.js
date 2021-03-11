@@ -4,12 +4,12 @@ import {Dimensions, Text, View, StyleSheet} from 'react-native';
 import theme from './../theme.style';
 import PillButton from './PillButton';
 
-export default function CardButton({text, icon, onPress}) {
+export default function CardButton({text, icon, onPress, style}) {
   return (
     <PillButton
       iconLeft={icon}
       onPress={onPress}
-      style={styles.button}
+      style={[styles.button, style]}
       text={text}
       textStyle={styles.text}
     />
