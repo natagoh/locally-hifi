@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, Text} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/Feather';
 
@@ -9,6 +9,7 @@ import OutlineButton from '../components/OutlineButton';
 export default function Home({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
+      <Text style={styles.title}>local.ly</Text>
       <View style={styles.buttonContainer}>
         <OutlineButton
           style={styles.button}
@@ -35,6 +36,12 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     backgroundColor: '#EEFBF8',
+  },
+  title: {
+    fontFamily: 'Lato',
+    fontWeight: 'bold',
+    fontSize: 80,
+    marginBottom: 64,
   },
   buttonContainer: {
     flexDirection: 'row',
