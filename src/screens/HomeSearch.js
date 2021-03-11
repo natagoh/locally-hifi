@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {StyleSheet} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import Icon from 'react-native-vector-icons/Feather';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
 import theme from './../theme.style';
 import PillButton from '../components/PillButton';
