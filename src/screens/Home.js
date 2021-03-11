@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+import {View, StyleSheet, Text, Image} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/Feather';
 
@@ -9,6 +9,10 @@ import OutlineButton from '../components/OutlineButton';
 export default function Home({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
+      <Image
+        source={require('./../assets/imgs/logo.png')}
+        style={styles.logo}
+      />
       <Text style={styles.title}>local.ly</Text>
       <View style={styles.buttonContainer}>
         <OutlineButton
@@ -37,15 +41,22 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: '#EEFBF8',
   },
+  logo: {
+    width: 128,
+    height: 128,
+  },
   title: {
     fontFamily: 'Lato',
     fontWeight: 'bold',
-    fontSize: 80,
+    color: theme.PRIMARY_COLOR,
+    fontSize: 64,
     marginBottom: 64,
   },
   buttonContainer: {
     flexDirection: 'row',
     width: '100%',
+    // todo: fix super hacky way of aligning search bar in the center with explicit margins
+    marginBottom: 200,
   },
   button: {
     marginHorizontal: theme.SPACING_LARGE,

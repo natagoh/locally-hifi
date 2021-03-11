@@ -32,6 +32,20 @@
 		3672EF205FB04DAEB06BFBF8 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90EC7738DFA44501A64F7250 /* Octicons.ttf */; };
 		003437C190FF48AEAE6F078B /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 60FBD2CEED90422EA1B17DD8 /* SimpleLineIcons.ttf */; };
 		FFCF367DF36A40258ED0FC3C /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D7AD3A339CBA4810B534B452 /* Zocial.ttf */; };
+		73D9A4E16D284880B9BCF579 /* Courgette-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8D6086C8B7B4E55A3D4F3FB /* Courgette-Regular.ttf */; };
+		2698D21FF57445EBA4E9B6D5 /* Hunters.otf in Resources */ = {isa = PBXBuildFile; fileRef = EE4189B8895047FE834640CF /* Hunters.otf */; };
+		AB1071088F8445048BE6B30C /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D4E429D18E0B461DB3B9FCBA /* Lato-Black.ttf */; };
+		59165BC4E6744002874DA35E /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 951AE16CBEF9444092BBAC4D /* Lato-BlackItalic.ttf */; };
+		8604849852724A9FBBC9E131 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5647C47EF2484B99979DC85D /* Lato-Bold.ttf */; };
+		14444172E38B48998A33D7E4 /* Lato-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8ED2D12C5C545078A686D56 /* Lato-BoldItalic.ttf */; };
+		613CD91C95F2430180788D98 /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 901571018B7845DA9AFABAB6 /* Lato-Italic.ttf */; };
+		D59F65AB84F34861AFA967AA /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 837A5EB7C5C04288A8A6BC9C /* Lato-Light.ttf */; };
+		60BD7B55EEFF49FCACBA45DB /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 367E5728E8DF4C4A98F2D100 /* Lato-LightItalic.ttf */; };
+		28B4867BD9FD4D3CAD7A078C /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8625C0837BC648FEB48BB5BF /* Lato-Regular.ttf */; };
+		321E523DE5254BE89AC4321E /* Lato-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 810B3801A29C4267851619B1 /* Lato-Thin.ttf */; };
+		0A30477AAFD843C4ACC41A47 /* Lato-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2117136FB84C43F3AB966A2C /* Lato-ThinItalic.ttf */; };
+		888C0971D38A421D99E9B0E5 /* courgette.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A2F20915AF04E3BAB918E50 /* courgette.ttf */; };
+		8BE42753D4A94025A7CD2395 /* hunters.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2CE384882B6470087823E59 /* hunters.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +97,20 @@
 		90EC7738DFA44501A64F7250 /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		60FBD2CEED90422EA1B17DD8 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		D7AD3A339CBA4810B534B452 /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A8D6086C8B7B4E55A3D4F3FB /* Courgette-Regular.ttf */ = {isa = PBXFileReference; name = "Courgette-Regular.ttf"; path = "../src/assets/fonts/Courgette-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EE4189B8895047FE834640CF /* Hunters.otf */ = {isa = PBXFileReference; name = "Hunters.otf"; path = "../src/assets/fonts/Hunters.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D4E429D18E0B461DB3B9FCBA /* Lato-Black.ttf */ = {isa = PBXFileReference; name = "Lato-Black.ttf"; path = "../src/assets/fonts/Lato-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		951AE16CBEF9444092BBAC4D /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; name = "Lato-BlackItalic.ttf"; path = "../src/assets/fonts/Lato-BlackItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5647C47EF2484B99979DC85D /* Lato-Bold.ttf */ = {isa = PBXFileReference; name = "Lato-Bold.ttf"; path = "../src/assets/fonts/Lato-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D8ED2D12C5C545078A686D56 /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; name = "Lato-BoldItalic.ttf"; path = "../src/assets/fonts/Lato-BoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		901571018B7845DA9AFABAB6 /* Lato-Italic.ttf */ = {isa = PBXFileReference; name = "Lato-Italic.ttf"; path = "../src/assets/fonts/Lato-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		837A5EB7C5C04288A8A6BC9C /* Lato-Light.ttf */ = {isa = PBXFileReference; name = "Lato-Light.ttf"; path = "../src/assets/fonts/Lato-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		367E5728E8DF4C4A98F2D100 /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; name = "Lato-LightItalic.ttf"; path = "../src/assets/fonts/Lato-LightItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8625C0837BC648FEB48BB5BF /* Lato-Regular.ttf */ = {isa = PBXFileReference; name = "Lato-Regular.ttf"; path = "../src/assets/fonts/Lato-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		810B3801A29C4267851619B1 /* Lato-Thin.ttf */ = {isa = PBXFileReference; name = "Lato-Thin.ttf"; path = "../src/assets/fonts/Lato-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2117136FB84C43F3AB966A2C /* Lato-ThinItalic.ttf */ = {isa = PBXFileReference; name = "Lato-ThinItalic.ttf"; path = "../src/assets/fonts/Lato-ThinItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4A2F20915AF04E3BAB918E50 /* courgette.ttf */ = {isa = PBXFileReference; name = "courgette.ttf"; path = "../src/assets/fonts/courgette.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D2CE384882B6470087823E59 /* hunters.otf */ = {isa = PBXFileReference; name = "hunters.otf"; path = "../src/assets/fonts/hunters.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +237,20 @@
 				90EC7738DFA44501A64F7250 /* Octicons.ttf */,
 				60FBD2CEED90422EA1B17DD8 /* SimpleLineIcons.ttf */,
 				D7AD3A339CBA4810B534B452 /* Zocial.ttf */,
+				A8D6086C8B7B4E55A3D4F3FB /* Courgette-Regular.ttf */,
+				EE4189B8895047FE834640CF /* Hunters.otf */,
+				D4E429D18E0B461DB3B9FCBA /* Lato-Black.ttf */,
+				951AE16CBEF9444092BBAC4D /* Lato-BlackItalic.ttf */,
+				5647C47EF2484B99979DC85D /* Lato-Bold.ttf */,
+				D8ED2D12C5C545078A686D56 /* Lato-BoldItalic.ttf */,
+				901571018B7845DA9AFABAB6 /* Lato-Italic.ttf */,
+				837A5EB7C5C04288A8A6BC9C /* Lato-Light.ttf */,
+				367E5728E8DF4C4A98F2D100 /* Lato-LightItalic.ttf */,
+				8625C0837BC648FEB48BB5BF /* Lato-Regular.ttf */,
+				810B3801A29C4267851619B1 /* Lato-Thin.ttf */,
+				2117136FB84C43F3AB966A2C /* Lato-ThinItalic.ttf */,
+				4A2F20915AF04E3BAB918E50 /* courgette.ttf */,
+				D2CE384882B6470087823E59 /* hunters.otf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -368,6 +410,20 @@
 				3672EF205FB04DAEB06BFBF8 /* Octicons.ttf in Resources */,
 				003437C190FF48AEAE6F078B /* SimpleLineIcons.ttf in Resources */,
 				FFCF367DF36A40258ED0FC3C /* Zocial.ttf in Resources */,
+				73D9A4E16D284880B9BCF579 /* Courgette-Regular.ttf in Resources */,
+				2698D21FF57445EBA4E9B6D5 /* Hunters.otf in Resources */,
+				AB1071088F8445048BE6B30C /* Lato-Black.ttf in Resources */,
+				59165BC4E6744002874DA35E /* Lato-BlackItalic.ttf in Resources */,
+				8604849852724A9FBBC9E131 /* Lato-Bold.ttf in Resources */,
+				14444172E38B48998A33D7E4 /* Lato-BoldItalic.ttf in Resources */,
+				613CD91C95F2430180788D98 /* Lato-Italic.ttf in Resources */,
+				D59F65AB84F34861AFA967AA /* Lato-Light.ttf in Resources */,
+				60BD7B55EEFF49FCACBA45DB /* Lato-LightItalic.ttf in Resources */,
+				28B4867BD9FD4D3CAD7A078C /* Lato-Regular.ttf in Resources */,
+				321E523DE5254BE89AC4321E /* Lato-Thin.ttf in Resources */,
+				0A30477AAFD843C4ACC41A47 /* Lato-ThinItalic.ttf in Resources */,
+				888C0971D38A421D99E9B0E5 /* courgette.ttf in Resources */,
+				8BE42753D4A94025A7CD2395 /* hunters.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

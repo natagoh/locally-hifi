@@ -44,6 +44,7 @@ export default function CardBody({text, onPress}) {
 const styles = StyleSheet.create({
   container: {
     display: 'flex',
+    flex: 0,
     flexDirection: 'column',
     marginLeft: theme.SPACING_MEDIUM,
   },
