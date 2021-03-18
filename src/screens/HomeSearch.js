@@ -29,14 +29,18 @@ export default function HomeSearch({navigation}) {
       />
       {search.length === 0 ? (
         <View style={styles.nullTextContainer}>
-          <Text style={styles.nullText}>no results :(</Text>
+          <Text style={styles.nullText}>try searching for something!</Text>
         </View>
-      ) : (
+      ) : search.toLowerCase() === 'watch' ? (
         <>
           <Card />
           <Card />
           <Card />
         </>
+      ) : (
+        <View style={styles.nullTextContainer}>
+          <Text style={styles.nullText}>no results :(</Text>
+        </View>
       )}
     </SafeAreaView>
   );
