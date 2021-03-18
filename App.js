@@ -8,10 +8,15 @@ import NavBar from './src/components/NavBar';
 
 export default function App() {
   const [search, setSearch] = useState('');
-  const [filter, setFilter] = useState([]);
+  const [filters, setFilters] = useState({
+    businessValues: [],
+    businessTypes: [],
+    productValues: [],
+    distance: 0,
+  });
 
   return (
-    <AppContext.Provider value={{search, setSearch, filter, setFilter}}>
+    <AppContext.Provider value={{search, setSearch, filters, setFilters}}>
       <SafeAreaProvider>
         <NavigationContainer>
           <NavBar />

@@ -1,14 +1,16 @@
 import * as React from 'react';
+import {useContext} from 'react';
 import {SafeAreaView, StyleSheet, View} from 'react-native';
 import Slider from '@react-native-community/slider';
 
+import AppContext from '../AppContext';
 import theme from './../theme.style';
 import FilterValue from './../components/FilterValue';
 import FilterHeading from './../components/FilterHeading';
 
-const FILTERS = ['asian-owned', 'black-owned', 'female-owned'];
+const BUSINESS_FILTERS = ['asian-owned', 'black-owned', 'female-owned'];
 
-const BUSINESS_TYPE = ['fashion', 'food', 'entertainment', 'health'];
+const BUSINESS_TYPES = ['fashion', 'food', 'entertainment', 'health'];
 
 const PRODUCT_FILTERS = [
   'second-hand',
@@ -18,25 +20,83 @@ const PRODUCT_FILTERS = [
 ];
 
 export default function HomeFilter() {
+  const {filters, setFilters} = useContext(AppContext);
+  let {businessValues, businessTypes, productValues, distance} = filters;
+
+  const addFilter = (filterType, val) => {
+    return () => {
+      let vals = filters[filterType];
+      vals.push(val);
+      setFilters({
+        ...filters,
+        [filterType]: vals,
+      });
+    };
+  };
+
+  const removeFilter = (filterType, val) => {
+    return () =>
+      setFilters({
+        ...filters,
+        [filterType]: filters[filterType].filter((e) => e !== val),
+      });
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <FilterHeading text="business values" />
       <View style={styles.valuesContainer}>
-        {FILTERS.map((filter, index) => (
-          <FilterValue text={filter} key={index} />
-        ))}
+        {BUSINESS_FILTERS.map((filter, index) => {
+          let isFilterActive = businessValues.includes(filter);
+          return (
+            <FilterValue
+              text={filter}
+              key={index}
+              isActive={isFilterActive}
+              onPress={
+                isFilterActive
+                  ? removeFilter('businessValues', filter)
+                  : addFilter('businessValues', filter)
+              }
+            />
+          );
+        })}
       </View>
       <FilterHeading text="business type" />
       <View style={styles.valuesContainer}>
-        {BUSINESS_TYPE.map((filter, index) => (
-          <FilterValue text={filter} key={index} />
-        ))}
+        {BUSINESS_TYPES.map((filter, index) => {
+          let isFilterActive = businessTypes.includes(filter);
+          return (
+            <FilterValue
+              text={filter}
+              key={index}
+              isActive={isFilterActive}
+              onPress={
+                isFilterActive
+                  ? removeFilter('businessTypes', filter)
+                  : addFilter('businessTypes', filter)
+              }
+            />
+          );
+        })}
       </View>
       <FilterHeading text="product values" />
       <View style={styles.valuesContainer}>
-        {PRODUCT_FILTERS.map((filter, index) => (
-          <FilterValue text={filter} key={index} />
-        ))}
+        {PRODUCT_FILTERS.map((filter, index) => {
+          let isFilterActive = productValues.includes(filter);
+          return (
+            <FilterValue
+              text={filter}
+              key={index}
+              isActive={isFilterActive}
+              onPress={
+                isFilterActive
+                  ? removeFilter('productValues', filter)
+                  : addFilter('productValues', filter)
+              }
+            />
+          );
+        })}
       </View>
       <FilterHeading text="distance" />
       <Slider
