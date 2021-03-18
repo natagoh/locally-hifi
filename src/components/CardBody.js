@@ -8,7 +8,7 @@ import FilterValue from './FilterValue';
 export default function CardBody({text, onPress}) {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Title</Text>
+      <Text style={styles.title}>Watch Store</Text>
       <View style={styles.section}>
         <Text style={styles.ratingText}>4.1</Text>
         {[...Array(5)].map((_, idx) => (
@@ -30,12 +30,8 @@ export default function CardBody({text, onPress}) {
         <Text style={styles.trustText}>23 friends who trust</Text>
       </View>
       <View style={styles.values}>
-        <FilterValue isDisplay={true} text="test" />
-        <FilterValue isDisplay={true} text="test value" />
-        <FilterValue isDisplay={true} text="whatever" />
-        <FilterValue isDisplay={true} text="whatever" />
-        <FilterValue isDisplay={true} text="test" />
-        <FilterValue isDisplay={true} text="test value" />
+        <FilterValue isDisplay={true} text="family-owned" />
+        <FilterValue isDisplay={true} text="second-hand" />
       </View>
     </View>
   );

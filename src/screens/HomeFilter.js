@@ -6,13 +6,15 @@ import theme from './../theme.style';
 import FilterValue from './../components/FilterValue';
 import FilterHeading from './../components/FilterHeading';
 
-const FILTERS = [
-  'asian-owned',
-  'black-owned',
+const FILTERS = ['asian-owned', 'black-owned', 'female-owned'];
+
+const BUSINESS_TYPE = ['fashion', 'food', 'entertainment', 'health'];
+
+const PRODUCT_FILTERS = [
+  'second-hand',
+  'vintage',
   'direct to consumer',
   'eco-friendly',
-  'female-owned',
-  'minority-owned',
 ];
 
 export default function HomeFilter() {
@@ -24,9 +26,15 @@ export default function HomeFilter() {
           <FilterValue text={filter} key={index} />
         ))}
       </View>
+      <FilterHeading text="business type" />
+      <View style={styles.valuesContainer}>
+        {BUSINESS_TYPE.map((filter, index) => (
+          <FilterValue text={filter} key={index} />
+        ))}
+      </View>
       <FilterHeading text="product values" />
       <View style={styles.valuesContainer}>
-        {FILTERS.map((filter, index) => (
+        {PRODUCT_FILTERS.map((filter, index) => (
           <FilterValue text={filter} key={index} />
         ))}
       </View>

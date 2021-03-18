@@ -1,16 +1,12 @@
 import * as React from 'react';
+import {useState} from 'react';
 import {TextInput, StyleSheet} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-
 import {useFocusEffect} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
 
 import theme from '../theme.style';
 
-const Stack = createStackNavigator();
-
-export default function HeaderSearch() {
-  const [value, setValue] = React.useState('');
+export default function HeaderSearch({search, setSearch}) {
   const headerSearchRef = React.useRef();
 
   useFocusEffect(
@@ -22,11 +18,20 @@ export default function HeaderSearch() {
     }, []),
   );
 
+  let [value, setValue] = useState(search);
+
   return (
     <SafeAreaView>
       <TextInput
         style={styles.searchInput}
-        onChangeText={(text) => setValue(text)}
+        onChangeText={(text) => {
+          setValue(text);
+        }}
+        onEndEditing={() => {
+          setSearch(value);
+          console.log('done search:', search);
+          console.log(setSearch);
+        }}
         placeholder="search local.ly"
         placeholderTextColor={theme.PRIMARY_COLOR_DIMMED}
         ref={headerSearchRef}
