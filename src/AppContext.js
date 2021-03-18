@@ -1,10 +1,5 @@
 import React from 'react';
 
-const AppContext = React.createContext({
-  search: '',
-  setSearch: () => {},
-  filters: [],
-  setFilters: () => {},
-});
+const AppContext = React.createContext({});
 
 export default AppContext;

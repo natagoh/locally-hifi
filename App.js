@@ -9,6 +9,7 @@ import NavBar from './src/components/NavBar';
 export default function App() {
   const [search, setSearch] = useState('');
   const [filter, setFilter] = useState([]);
+
   return (
     <AppContext.Provider value={{search, setSearch, filter, setFilter}}>
       <SafeAreaProvider>
