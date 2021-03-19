@@ -12,6 +12,10 @@ import BaseButton from '../components/BaseButton';
 export default function FeedShare({navigation}) {
   const {search} = useContext(AppContext);
 
+  // const selectCard = (cardData) => {
+
+  // }
+
   return (
     <View style={styles.container}>
       <PillButton

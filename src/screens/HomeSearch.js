@@ -1,9 +1,10 @@
 import * as React from 'react';
-import {useContext} from 'react';
+import {useContext, useEffect, useState} from 'react';
 import {Text, StyleSheet, View, ScrollView} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
+import data from '../assets/data.json';
 import AppContext from '../AppContext';
 import theme from './../theme.style';
 import PillButton from '../components/PillButton';
@@ -33,11 +34,9 @@ export default function HomeSearch({navigation}) {
         </View>
       ) : search.toLowerCase() === 'watch' ? (
         <ScrollView style={styles.scrollView}>
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {data.map((val, idx) => (
+            <Card data={val} key={idx} />
+          ))}
         </ScrollView>
       ) : (
         <View style={styles.nullTextContainer}>

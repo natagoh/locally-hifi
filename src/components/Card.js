@@ -6,7 +6,20 @@ import theme from './../theme.style';
 import CardBody from './CardBody';
 import CardButtonGroup from './CardButtonGroup';
 
-export default function Card({onPress}) {
+// data = {
+//   address: "984 Beverley Road, Manitou, South Dakota, 2122"
+//   company: "Pyramax"
+//   friendsWhoTrust: 61
+//   img: "http://placehold.it/32x32"
+//   numRatings: 560
+//   phone: "+1 (967) 497-3140"
+//   rating: 4.8211
+//   values: (7) ["cillum", "fugiat", "irure", "quis", "sint", "ad", "qui"]
+//   _id: "60543e9c5ba8c546d937f2ed"
+// }
+
+export default function Card({data, onPress, isPressed}) {
+  console.log('data', data);
   const cardButtonData = [
     {
       text: 'save card',
@@ -49,11 +62,11 @@ export default function Card({onPress}) {
             source={require('./../assets/imgs/watch.jpg')}
             style={styles.img}
           />
-          <CardBody />
+          <CardBody data={data} />
         </View>
         <CardButtonGroup data={cardButtonData} />
       </View>
-      {overlay}
+      {isPressed ? overlay : null}
     </Pressable>
   );
 }
@@ -102,11 +115,8 @@ const styles = StyleSheet.create({
   },
   overlayIcon: {
     position: 'absolute',
-    // backgroundColor: '#888383',
-    // opacity: 0.75,
     width: '100%',
     height: '100%',
-    // borderRadius: 20,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',

@@ -5,12 +5,13 @@ import Icon from 'react-native-vector-icons/Feather';
 import theme from './../theme.style';
 import FilterValue from './FilterValue';
 
-export default function CardBody({text, onPress}) {
+export default function CardBody(data) {
+  let {company, values, friendsWhoTrust, rating, numRatings} = data.data;
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Watch Store</Text>
+      <Text style={styles.title}>{company}</Text>
       <View style={styles.section}>
-        <Text style={styles.ratingText}>4.1</Text>
+        <Text style={styles.ratingText}>{rating.toFixed(2)}</Text>
         {[...Array(5)].map((_, idx) => (
           <Icon
             size={theme.FONT_SIZE_MEDIUM}
@@ -19,7 +20,7 @@ export default function CardBody({text, onPress}) {
             key={`card-rating-star-${idx}`}
           />
         ))}
-        <Text style={styles.numRatingsText}>(888)</Text>
+        <Text style={styles.numRatingsText}>({numRatings})</Text>
       </View>
       <View style={styles.section}>
         <Icon
@@ -27,11 +28,14 @@ export default function CardBody({text, onPress}) {
           color={theme.PRIMARY_COLOR}
           name="user-check"
         />
-        <Text style={styles.trustText}>23 friends who trust</Text>
+        <Text style={styles.trustText}>
+          {friendsWhoTrust} friends who trust
+        </Text>
       </View>
       <View style={styles.values}>
-        <FilterValue isDisplay={true} text="family-owned" />
-        <FilterValue isDisplay={true} text="second-hand" />
+        {values.map((val, idx) => (
+          <FilterValue isDisplay={true} text={val} key={idx} />
+        ))}
       </View>
     </View>
   );

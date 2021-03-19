@@ -1,0 +1,81 @@
+[
+  {
+    "_id": "60543e9c5ba8c546d937f2ed",
+    "company": "Pyramax",
+    "rating": 4.8211,
+    "numRatings": 560,
+    "friendsWhoTrust": 61,
+    "img": "http://placehold.it/32x32",
+    "phone": "+1 (967) 497-3140",
+    "address": "984 Beverley Road, Manitou, South Dakota, 2122",
+    "values": ["cillum", "fugiat", "irure", "quis", "sint", "ad", "qui"]
+  },
+  {
+    "_id": "60543e9c5aa9a34b6bfde978",
+    "company": "Biotica",
+    "rating": 3.9274,
+    "numRatings": 919,
+    "friendsWhoTrust": 71,
+    "img": "http://placehold.it/32x32",
+    "phone": "+1 (934) 456-3244",
+    "address": "708 Elliott Place, Leland, Mississippi, 143",
+    "values": ["nostrud", "qui", "voluptate", "velit", "sit", "anim", "non"]
+  },
+  {
+    "_id": "60543e9c0b6275e164f7e5e5",
+    "company": "Telequiet",
+    "rating": 4.7231,
+    "numRatings": 980,
+    "friendsWhoTrust": 96,
+    "img": "http://placehold.it/32x32",
+    "phone": "+1 (946) 476-2468",
+    "address": "162 Euclid Avenue, Brazos, Michigan, 5829",
+    "values": [
+      "pariatur",
+      "dolor",
+      "consequat",
+      "velit",
+      "ullamco",
+      "nostrud",
+      "anim"
+    ]
+  },
+  {
+    "_id": "60543e9c60a65c68808c3b98",
+    "company": "Enervate",
+    "rating": 4.3127,
+    "numRatings": 359,
+    "friendsWhoTrust": 98,
+    "img": "http://placehold.it/32x32",
+    "phone": "+1 (974) 509-3389",
+    "address": "685 Vandervoort Place, Riverton, Rhode Island, 434",
+    "values": [
+      "occaecat",
+      "voluptate",
+      "ut",
+      "consequat",
+      "exercitation",
+      "aliqua",
+      "duis"
+    ]
+  },
+  {
+    "_id": "60543e9c9159a03ba4eb2ac8",
+    "company": "Eventage",
+    "rating": 3.0774,
+    "numRatings": 168,
+    "friendsWhoTrust": 55,
+    "img": "http://placehold.it/32x32",
+    "phone": "+1 (865) 522-3519",
+    "address": "319 Throop Avenue, Oneida, Georgia, 2434",
+    "values": [
+      "excepteur",
+      "eu",
+      "dolor",
+      "esse",
+      "eu",
+      "reprehenderit",
+      "esse"
+    ]
+  }
+]
