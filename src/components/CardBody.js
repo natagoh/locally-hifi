@@ -33,7 +33,7 @@ export default function CardBody(data) {
         </Text>
       </View>
       <View style={styles.values}>
-        {values.map((val, idx) => (
+        {values.slice(0, 5).map((val, idx) => (
           <FilterValue isDisplay={true} text={val} key={idx} />
         ))}
       </View>
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
   values: {
     marginTop: 6,
     // todo: fix super hacky fix where filter values can overflow
-    paddingRight: 70,
+    paddingRight: 100,
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     flexDirection: 'row',

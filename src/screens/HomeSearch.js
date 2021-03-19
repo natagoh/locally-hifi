@@ -24,7 +24,11 @@ export default function HomeSearch({navigation}) {
           />
         }
         onPress={() => navigation.navigate('Filter')}
-        text="filter 15 results"
+        text={
+          search.toLowerCase() === 'watch'
+            ? `filter ${data.length} results`
+            : 'filter'
+        }
         style={styles.filterButton}
         textStyle={styles.filterButtonText}
       />

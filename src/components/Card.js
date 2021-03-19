@@ -19,7 +19,6 @@ import CardButtonGroup from './CardButtonGroup';
 // }
 
 export default function Card({data, onPress, isPressed}) {
-  console.log('data', data);
   const cardButtonData = [
     {
       text: 'save card',

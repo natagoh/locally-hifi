@@ -1,8 +1,9 @@
 import * as React from 'react';
-import {useContext} from 'react';
+import {useContext, useState} from 'react';
 import {Dimensions, Text, StyleSheet, View, ScrollView} from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
+import data from '../assets/data.json';
 import AppContext from '../AppContext';
 import theme from '../theme.style';
 import PillButton from '../components/PillButton';
@@ -11,10 +12,9 @@ import BaseButton from '../components/BaseButton';
 
 export default function FeedShare({navigation}) {
   const {search} = useContext(AppContext);
+  let {cardIDs, setCardIDs} = useState([]);
 
-  // const selectCard = (cardData) => {
-
-  // }
+  console.log('set', cardIDs);
 
   return (
     <View style={styles.container}>
@@ -27,7 +27,11 @@ export default function FeedShare({navigation}) {
           />
         }
         onPress={() => navigation.navigate('Filter')}
-        text="filter 15 results"
+        text={
+          search.toLowerCase() === 'watch'
+            ? `filter ${data.length} results`
+            : 'filter'
+        }
         style={styles.filterButton}
         textStyle={styles.filterButtonText}
       />
@@ -39,9 +43,21 @@ export default function FeedShare({navigation}) {
         <>
           <Text style={styles.hint}>tap the cards you want to share</Text>
           <ScrollView style={styles.scrollView}>
-            <Card onPress={() => console.log('yo pressed something')} />
-            <Card />
-            <Card />
+            {data.map((val, idx) => (
+              <Card
+                data={val}
+                key={idx}
+                // isPressed={cardIDs.includes(idx)}
+                // onPress={() => {
+                //   if (cardIDs.has(idx)) {
+                //     setCardIDs(cardIDs.filter((e) => e !== idx));
+                //   } else {
+                //     cardIDs.push(idx);
+                //     setCardIDs(cardIDs);
+                //   }
+                // }}
+              />
+            ))}
           </ScrollView>
         </>
       ) : (
