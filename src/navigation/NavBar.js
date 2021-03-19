@@ -6,14 +6,13 @@ import Icon from 'react-native-vector-icons/Feather';
 import theme from '../theme.style';
 import HomeNavigator from './HomeNavigator';
 import FeedNavigator from './FeedNavigator';
-import Feed from '../screens/Feed';
 import Cards from './../screens/Cards';
 import Chat from './../screens/Chat';
 import Profile from './../screens/Profile';
 
 const getTabBarVisibility = (route) => {
   const routeName = getFocusedRouteNameFromRoute(route) ?? '';
-  const hideTabBarRoutes = ['Search', 'Filter'];
+  const hideTabBarRoutes = ['Search', 'Filter', 'FeedShare'];
   return !(hideTabBarRoutes.indexOf(routeName) >= 0);
 };
 

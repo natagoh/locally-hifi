@@ -16,7 +16,6 @@ export default function HeaderSearch({
 
   useFocusEffect(
     React.useCallback(() => {
-      console.log('search should be focused');
       if (focusOnEntry) {
         headerSearchRef.current.focus();
       }

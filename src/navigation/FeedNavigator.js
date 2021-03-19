@@ -5,6 +5,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import AppContext from '../AppContext';
 import theme from '../theme.style';
 import Feed from '../screens/Feed';
+import FeedShare from '../screens/FeedShare';
 import HomeSearch from '../screens/HomeSearch';
 import HomeFilter from '../screens/HomeFilter';
 import HeaderSearch from '../components/HeaderSearch';
@@ -27,7 +28,7 @@ export default function FeedNavigator() {
               {...props}
               search={search}
               setSearch={setSearch}
-              placeholder="search friends"
+              placeholder="search feed"
               focusOnEntry={false}
             />
           ),
@@ -43,11 +44,17 @@ export default function FeedNavigator() {
         }}
       />
       <Stack.Screen
-        name="Search"
-        component={HomeSearch}
+        name="FeedShare"
+        component={FeedShare}
         options={{
           headerTitle: (props) => (
-            <HeaderSearch {...props} search={search} setSearch={setSearch} />
+            <HeaderSearch
+              {...props}
+              search={search}
+              setSearch={setSearch}
+              placeholder="find a place to share"
+              focusOnEntry={true}
+            />
           ),
           headerTintColor: theme.PRIMARY_COLOR,
           headerStyle: {

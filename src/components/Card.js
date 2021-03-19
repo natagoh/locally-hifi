@@ -1,12 +1,12 @@
 import * as React from 'react';
-import {Dimensions, Image, View, StyleSheet} from 'react-native';
+import {Pressable, Image, View, StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
 import theme from './../theme.style';
 import CardBody from './CardBody';
 import CardButtonGroup from './CardButtonGroup';
 
-export default function Card() {
+export default function Card({onPress}) {
   const cardButtonData = [
     {
       text: 'save card',
@@ -32,17 +32,29 @@ export default function Card() {
     },
   ];
 
-  return (
-    <View style={styles.container}>
-      <View style={styles.cardInfo}>
-        <Image
-          source={require('./../assets/imgs/watch.jpg')}
-          style={styles.img}
-        />
-        <CardBody />
+  const overlay = (
+    <>
+      <View style={styles.overlay} />
+      <View style={styles.overlayIcon}>
+        <Icon size={108} color="white" name="check" />
       </View>
-      <CardButtonGroup data={cardButtonData} />
-    </View>
+    </>
+  );
+
+  return (
+    <Pressable style={styles.container} onPress={onPress}>
+      <View style={styles.innerContainer}>
+        <View style={styles.cardInfo}>
+          <Image
+            source={require('./../assets/imgs/watch.jpg')}
+            style={styles.img}
+          />
+          <CardBody />
+        </View>
+        <CardButtonGroup data={cardButtonData} />
+      </View>
+      {overlay}
+    </Pressable>
   );
 }
 
@@ -54,15 +66,17 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
 
     marginVertical: theme.SPACING_MEDIUM,
-    padding: theme.SPACING_MEDIUM,
     backgroundColor: theme.CARD_BACKGROUND_COLOR,
 
     width: '100%',
-    height: Dimensions.get('window').width / 1.5,
 
     borderRadius: 20,
     borderWidth: 1,
     borderColor: theme.CARD_BORDER_COLOR,
+  },
+  innerContainer: {
+    width: '100%',
+    padding: theme.SPACING_MEDIUM,
   },
   cardInfo: {
     width: '100%',
@@ -77,5 +91,24 @@ const styles = StyleSheet.create({
     borderColor: theme.CARD_BORDER_COLOR,
     borderRadius: 10,
     borderWidth: 1,
+  },
+  overlay: {
+    position: 'absolute',
+    backgroundColor: '#888383',
+    opacity: 0.75,
+    width: '100%',
+    height: '100%',
+    borderRadius: 20,
+  },
+  overlayIcon: {
+    position: 'absolute',
+    // backgroundColor: '#888383',
+    // opacity: 0.75,
+    width: '100%',
+    height: '100%',
+    // borderRadius: 20,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
