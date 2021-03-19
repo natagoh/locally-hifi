@@ -11,6 +11,7 @@ export default function PillButton({
   onPress,
   text,
   textStyle,
+  disabled,
 }) {
   return (
     <BaseButton
@@ -20,6 +21,7 @@ export default function PillButton({
       iconLeft={iconLeft}
       iconRight={iconRight}
       onPress={onPress}
+      disabled={disabled}
     />
   );
 }

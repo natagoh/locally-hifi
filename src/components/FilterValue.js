@@ -20,6 +20,7 @@ export default function FilterValue({
       text={text}
       textStyle={[styles.textStyle, styles.displayPillText]}
       onPress={onPress}
+      disabled={true}
     />
   ) : isActive ? (
     <PillButton

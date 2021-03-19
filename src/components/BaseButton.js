@@ -6,11 +6,13 @@ export default function BaseButton({
   onPress,
   textStyle,
   text,
+  disabled,
   iconLeft = null,
   iconRight = null,
 }) {
   return (
     <TouchableOpacity
+      disabled={disabled}
       onPress={onPress}
       style={style}
       android_ripple={{color: 'green'}}>

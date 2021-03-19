@@ -11,6 +11,7 @@ export default function OutlineButton({
   iconRight,
   onPress,
   text,
+  disabled,
 }) {
   return (
     <BaseButton
@@ -20,6 +21,7 @@ export default function OutlineButton({
       iconLeft={iconLeft}
       iconRight={iconRight}
       onPress={onPress}
+      disabled={disabled}
     />
   );
 }

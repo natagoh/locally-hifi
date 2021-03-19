@@ -12,9 +12,9 @@ import BaseButton from '../components/BaseButton';
 
 export default function FeedShare({navigation}) {
   const {search} = useContext(AppContext);
-  let {cardIDs, setCardIDs} = useState([]);
+  const [cardIds, setCardIds] = useState([]);
 
-  console.log('set', cardIDs);
+  console.log('cardIds', cardIds);
 
   return (
     <View style={styles.container}>
@@ -47,15 +47,15 @@ export default function FeedShare({navigation}) {
               <Card
                 data={val}
                 key={idx}
-                // isPressed={cardIDs.includes(idx)}
-                // onPress={() => {
-                //   if (cardIDs.has(idx)) {
-                //     setCardIDs(cardIDs.filter((e) => e !== idx));
-                //   } else {
-                //     cardIDs.push(idx);
-                //     setCardIDs(cardIDs);
-                //   }
-                // }}
+                isPressed={cardIds.includes(val._id)}
+                onPress={() => {
+                  console.log('pressed', cardIds);
+                  if (cardIds.includes(val._id)) {
+                    setCardIds(cardIds.filter((e) => e !== val._id));
+                  } else {
+                    setCardIds([...cardIds, val._id]);
+                  }
+                }}
               />
             ))}
           </ScrollView>
@@ -65,14 +65,16 @@ export default function FeedShare({navigation}) {
           <Text style={styles.nullText}>no results :(</Text>
         </View>
       )}
-      <BaseButton
-        text="share (1)"
-        style={styles.shareButton}
-        textStyle={styles.shareButtonText}
-        iconLeft={
-          <Icon size={theme.FONT_SIZE_LARGE} color="white" name="share-2" />
-        }
-      />
+      {cardIds.length > 0 ? (
+        <BaseButton
+          text={`share (${cardIds.length})`}
+          style={styles.shareButton}
+          textStyle={styles.shareButtonText}
+          iconLeft={
+            <Icon size={theme.FONT_SIZE_LARGE} color="white" name="share-2" />
+          }
+        />
+      ) : null}
     </View>
   );
 }
