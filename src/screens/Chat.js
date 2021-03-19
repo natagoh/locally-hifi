@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/Feather';
 
 import theme from '../theme.style';
 import PillButton from '../components/PillButton';
-import FeedPost from '../components/FeedPost';
+import ChatIntro from '../components/ChatIntro';
 
 export default function Chat({navigation}) {
   return (
@@ -24,7 +24,10 @@ export default function Chat({navigation}) {
           }
         />
       </View>
-      <FeedPost onPress={() => navigation.navigate('FeedShare')} />
+      <ChatIntro
+        name="Martha"
+        onPress={() => navigation.navigate('FeedShare')}
+      />
     </View>
   );
 }

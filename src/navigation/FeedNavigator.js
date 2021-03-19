@@ -6,7 +6,6 @@ import AppContext from '../AppContext';
 import theme from '../theme.style';
 import Feed from '../screens/Feed';
 import FeedShare from '../screens/FeedShare';
-import HomeSearch from '../screens/HomeSearch';
 import HomeFilter from '../screens/HomeFilter';
 import HeaderSearch from '../components/HeaderSearch';
 
