@@ -4,7 +4,7 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {NavigationContainer} from '@react-navigation/native';
 
 import AppContext from './src/AppContext';
-import NavBar from './src/components/NavBar';
+import NavBar from './src/navigation/NavBar';
 
 export default function App() {
   const [search, setSearch] = useState('');

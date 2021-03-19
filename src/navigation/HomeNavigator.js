@@ -7,7 +7,7 @@ import theme from '../theme.style';
 import Home from '../screens/Home';
 import HomeSearch from '../screens/HomeSearch';
 import HomeFilter from '../screens/HomeFilter';
-import HeaderSearch from './HeaderSearch';
+import HeaderSearch from '../components/HeaderSearch';
 
 const Stack = createStackNavigator();
 
@@ -30,7 +30,13 @@ export default function HomeNavigator() {
         component={HomeSearch}
         options={{
           headerTitle: (props) => (
-            <HeaderSearch {...props} search={search} setSearch={setSearch} />
+            <HeaderSearch
+              {...props}
+              search={search}
+              setSearch={setSearch}
+              placeholder="search local.ly"
+              focusOnEntry={search.length === 0}
+            />
           ),
           headerTintColor: theme.PRIMARY_COLOR,
           headerStyle: {

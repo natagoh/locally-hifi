@@ -6,16 +6,23 @@ import {useFocusEffect} from '@react-navigation/native';
 
 import theme from '../theme.style';
 
-export default function HeaderSearch({search, setSearch}) {
+export default function HeaderSearch({
+  search,
+  setSearch,
+  placeholder,
+  focusOnEntry,
+}) {
   const headerSearchRef = React.useRef();
 
   useFocusEffect(
     React.useCallback(() => {
       console.log('search should be focused');
-      headerSearchRef.current.focus();
+      if (focusOnEntry) {
+        headerSearchRef.current.focus();
+      }
       // clean up function when screen is unfocused
       return () => {};
-    }, []),
+    }, [focusOnEntry]),
   );
 
   let [value, setValue] = useState(search);
@@ -32,7 +39,7 @@ export default function HeaderSearch({search, setSearch}) {
           console.log('done search:', search);
           console.log(setSearch);
         }}
-        placeholder="search local.ly"
+        placeholder={placeholder}
         placeholderTextColor={theme.PRIMARY_COLOR_DIMMED}
         ref={headerSearchRef}
         returnKeyType="search"

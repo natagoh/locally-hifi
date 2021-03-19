@@ -5,7 +5,8 @@ import Icon from 'react-native-vector-icons/Feather';
 
 import theme from '../theme.style';
 import HomeNavigator from './HomeNavigator';
-import Friends from './../screens/Friends';
+import FeedNavigator from './FeedNavigator';
+import Feed from '../screens/Feed';
 import Cards from './../screens/Cards';
 import Chat from './../screens/Chat';
 import Profile from './../screens/Profile';
@@ -29,7 +30,7 @@ export default function NavBar() {
             case 'Home':
               iconName = focused ? 'home' : 'home';
               break;
-            case 'Friends':
+            case 'Feed':
               iconName = focused ? 'users' : 'users';
               break;
             case 'Cards':
@@ -71,7 +72,13 @@ export default function NavBar() {
           tabBarVisible: getTabBarVisibility(route),
         })}
       />
-      <Tab.Screen name="Friends" component={Friends} />
+      <Tab.Screen
+        name="Feed"
+        component={FeedNavigator}
+        options={({route}) => ({
+          tabBarVisible: getTabBarVisibility(route),
+        })}
+      />
       <Tab.Screen name="Cards" component={Cards} />
       <Tab.Screen name="Chat" component={Chat} />
       <Tab.Screen name="Profile" component={Profile} />

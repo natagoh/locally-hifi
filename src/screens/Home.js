@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: '#EEFBF8',
+    backgroundColor: theme.BACKGROUND_COLOR,
   },
   logo: {
     width: 128,
