@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {View, StyleSheet, Text, Image} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import Icon from 'react-native-vector-icons/Feather';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import theme from './../theme.style';
 import OutlineButton from '../components/OutlineButton';

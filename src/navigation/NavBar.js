@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {useState} from 'react';
 import {getFocusedRouteNameFromRoute} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Feather';
@@ -7,6 +8,7 @@ import theme from '../theme.style';
 import HomeNavigator from './HomeNavigator';
 import FeedNavigator from './FeedNavigator';
 import ChatNavigator from './ChatNavigator';
+import CardsNavigator from './CardsNavigator';
 import Cards from './../screens/Cards';
 import Profile from './../screens/Profile';
 
@@ -19,6 +21,8 @@ const getTabBarVisibility = (route) => {
 const Tab = createBottomTabNavigator();
 
 export default function NavBar() {
+  const [search, setSearch] = useState('');
+
   return (
     <Tab.Navigator
       screenOptions={({route}) => ({
@@ -78,7 +82,13 @@ export default function NavBar() {
           tabBarVisible: getTabBarVisibility(route),
         })}
       />
-      <Tab.Screen name="Cards" component={Cards} />
+      <Tab.Screen
+        name="Cards"
+        component={CardsNavigator}
+        options={({route}) => ({
+          tabBarVisible: getTabBarVisibility(route),
+        })}
+      />
       <Tab.Screen
         name="Chat"
         component={ChatNavigator}

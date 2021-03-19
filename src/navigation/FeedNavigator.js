@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {useContext, useState} from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import AppContext from '../AppContext';
 import theme from '../theme.style';
@@ -29,6 +30,13 @@ export default function FeedNavigator() {
               setSearch={setSearch}
               placeholder="search feed"
               focusOnEntry={false}
+              icon={
+                <Icon
+                  size={theme.FONT_SIZE_LARGE}
+                  color={theme.PRIMARY_COLOR}
+                  name="search"
+                />
+              }
             />
           ),
           headerTintColor: theme.PRIMARY_COLOR,

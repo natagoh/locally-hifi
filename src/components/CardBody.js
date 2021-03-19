@@ -5,33 +5,51 @@ import Icon from 'react-native-vector-icons/Feather';
 import theme from './../theme.style';
 import FilterValue from './FilterValue';
 
-export default function CardBody(data) {
-  let {company, values, friendsWhoTrust, rating, numRatings} = data.data;
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>{company}</Text>
-      <View style={styles.section}>
-        <Text style={styles.ratingText}>{rating.toFixed(2)}</Text>
-        {[...Array(5)].map((_, idx) => (
-          <Icon
-            size={theme.FONT_SIZE_MEDIUM}
-            color={theme.PRIMARY_COLOR}
-            name="star"
-            key={`card-rating-star-${idx}`}
-          />
-        ))}
-        <Text style={styles.numRatingsText}>({numRatings})</Text>
-      </View>
-      <View style={styles.section}>
+// if isSaved === true, card should display rewards progress
+export default function CardBody({data, isSaved}) {
+  let {company, values, friendsWhoTrust, rating, numRatings} = data;
+
+  const ratings = (
+    <View style={styles.section}>
+      <Text style={styles.ratingText}>{rating.toFixed(2)}</Text>
+      {[...Array(5)].map((_, idx) => (
         <Icon
           size={theme.FONT_SIZE_MEDIUM}
           color={theme.PRIMARY_COLOR}
-          name="user-check"
+          name="star"
+          key={`card-rating-star-${idx}`}
         />
-        <Text style={styles.trustText}>
-          {friendsWhoTrust} friends who trust
-        </Text>
-      </View>
+      ))}
+      <Text style={styles.numRatingsText}>({numRatings})</Text>
+    </View>
+  );
+  const trust = (
+    <View style={styles.section}>
+      <Icon
+        size={theme.FONT_SIZE_MEDIUM}
+        color={theme.PRIMARY_COLOR}
+        name="user-check"
+      />
+      <Text style={styles.trustText}>{friendsWhoTrust} friends who trust</Text>
+    </View>
+  );
+
+  const lastVisit = (
+    <View style={styles.section}>
+      <Text style={styles.trustText}>last visit: 3 days ago</Text>
+    </View>
+  );
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>{company}</Text>
+      {isSaved ? (
+        <>{lastVisit}</>
+      ) : (
+        <>
+          {ratings}
+          {trust}
+        </>
+      )}
       <View style={styles.values}>
         {values.slice(0, 5).map((val, idx) => (
           <FilterValue isDisplay={true} text={val} key={idx} />

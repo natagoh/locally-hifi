@@ -18,7 +18,12 @@ const defaultData = {
   _id: '60543e9c5ba8c546d937f2ed',
 };
 
-export default function Card({data = defaultData, onPress, isPressed}) {
+export default function Card({
+  data = defaultData,
+  onPress,
+  isPressed,
+  isSaved = false,
+}) {
   const cardButtonData = [
     {
       text: 'save card',
@@ -61,7 +66,7 @@ export default function Card({data = defaultData, onPress, isPressed}) {
             source={require('./../assets/imgs/watch.jpg')}
             style={styles.img}
           />
-          <CardBody data={data} />
+          <CardBody data={data} isSaved={isSaved} />
         </View>
         <CardButtonGroup data={cardButtonData} />
       </View>

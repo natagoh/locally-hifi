@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {useState} from 'react';
-import {TextInput, StyleSheet} from 'react-native';
+import {TextInput, StyleSheet, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {useFocusEffect} from '@react-navigation/native';
 
@@ -11,6 +11,7 @@ export default function HeaderSearch({
   setSearch,
   placeholder,
   focusOnEntry,
+  icon = null,
 }) {
   const headerSearchRef = React.useRef();
 
@@ -27,7 +28,8 @@ export default function HeaderSearch({
   let [value, setValue] = useState(search);
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
+      {icon !== null ? <View style={styles.icon}>{icon}</View> : null}
       <TextInput
         style={styles.searchInput}
         onChangeText={(text) => {
@@ -48,6 +50,14 @@ export default function HeaderSearch({
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 0,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  icon: {
+    marginRight: theme.SPACING_LARGE,
+  },
   searchInput: {
     width: '100%',
     fontFamily: 'Lato',

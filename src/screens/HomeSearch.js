@@ -39,7 +39,7 @@ export default function HomeSearch({navigation}) {
       ) : homeSearch.toLowerCase() === 'watch' ? (
         <ScrollView style={styles.scrollView}>
           {data.map((val, idx) => (
-            <Card data={val} key={idx} />
+            <Card data={val} isSaved={false} key={idx} />
           ))}
         </ScrollView>
       ) : (

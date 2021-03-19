@@ -5,27 +5,27 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 import AppContext from '../AppContext';
 import theme from '../theme.style';
-import Chat from '../screens/Chat';
+import Cards from '../screens/Cards';
 import ChatThread from '../screens/ChatThread';
 import HeaderSearch from '../components/HeaderSearch';
 
 const Stack = createStackNavigator();
 
-export default function ChatNavigator() {
+export default function CardsNavigator() {
   const {search, setSearch} = useContext(AppContext);
 
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Chat"
-        component={Chat}
+        name="Cards"
+        component={Cards}
         options={{
           headerTitle: (props) => (
             <HeaderSearch
               {...props}
               search={search}
               setSearch={setSearch}
-              placeholder="search chats"
+              placeholder="search cards"
               focusOnEntry={false}
               icon={
                 <Icon
