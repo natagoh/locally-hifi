@@ -47,6 +47,7 @@ const styles = StyleSheet.create({
     flex: 0,
     flexDirection: 'column',
     marginLeft: theme.SPACING_MEDIUM,
+    flexShrink: 1,
   },
   title: {
     fontFamily: 'Lato',
@@ -70,8 +71,6 @@ const styles = StyleSheet.create({
   },
   values: {
     marginTop: 6,
-    // todo: fix super hacky fix where filter values can overflow
-    paddingRight: 100,
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     flexDirection: 'row',
