@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {TouchableOpacity, StyleSheet, Text, View} from 'react-native';
 
 export default function BaseButton({
   style,
@@ -10,7 +10,10 @@ export default function BaseButton({
   iconRight = null,
 }) {
   return (
-    <TouchableOpacity onPress={onPress} style={style}>
+    <TouchableOpacity
+      onPress={onPress}
+      style={style}
+      android_ripple={{color: 'green'}}>
       <View style={styles.container}>
         {iconLeft}
         <Text

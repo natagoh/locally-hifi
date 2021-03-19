@@ -1,19 +1,19 @@
 import * as React from 'react';
 import {useContext} from 'react';
-import {Text, StyleSheet, View} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import Icon from 'react-native-vector-icons/FontAwesome5';
+import {Dimensions, Text, StyleSheet, View} from 'react-native';
+import Icon from 'react-native-vector-icons/Feather';
 
 import AppContext from '../AppContext';
 import theme from '../theme.style';
 import PillButton from '../components/PillButton';
 import Card from '../components/Card';
+import BaseButton from '../components/BaseButton';
 
 export default function FeedShare({navigation}) {
   const {search} = useContext(AppContext);
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <PillButton
         iconLeft={
           <Icon
@@ -43,16 +43,24 @@ export default function FeedShare({navigation}) {
           <Text style={styles.nullText}>no results :(</Text>
         </View>
       )}
-    </SafeAreaView>
+      <BaseButton
+        text="share (1)"
+        style={styles.shareButton}
+        textStyle={styles.shareButtonText}
+        iconLeft={
+          <Icon size={theme.FONT_SIZE_LARGE} color="white" name="share-2" />
+        }
+      />
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    justifyContent: 'flex-start',
-    alignItems: 'center',
     flex: 1,
     flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
     backgroundColor: theme.BACKGROUND_COLOR,
     padding: theme.SPACING_MEDIUM,
   },
@@ -77,5 +85,17 @@ const styles = StyleSheet.create({
   nullTextContainer: {
     flex: 1,
     justifyContent: 'center',
+  },
+  shareButton: {
+    position: 'absolute',
+    bottom: 0,
+    width: Dimensions.get('window').width,
+    alignItems: 'center',
+    backgroundColor: theme.PRIMARY_COLOR,
+    padding: theme.SPACING_MEDIUM,
+  },
+  shareButtonText: {
+    color: 'white',
+    fontSize: theme.FONT_SIZE_LARGE,
   },
 });
