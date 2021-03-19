@@ -6,13 +6,13 @@ import Icon from 'react-native-vector-icons/Feather';
 import theme from '../theme.style';
 import HomeNavigator from './HomeNavigator';
 import FeedNavigator from './FeedNavigator';
+import ChatNavigator from './ChatNavigator';
 import Cards from './../screens/Cards';
-import Chat from './../screens/Chat';
 import Profile from './../screens/Profile';
 
 const getTabBarVisibility = (route) => {
   const routeName = getFocusedRouteNameFromRoute(route) ?? '';
-  const hideTabBarRoutes = ['Search', 'Filter', 'FeedShare'];
+  const hideTabBarRoutes = ['Search', 'Filter', 'FeedShare', 'ChatThread'];
   return !(hideTabBarRoutes.indexOf(routeName) >= 0);
 };
 
@@ -79,7 +79,13 @@ export default function NavBar() {
         })}
       />
       <Tab.Screen name="Cards" component={Cards} />
-      <Tab.Screen name="Chat" component={Chat} />
+      <Tab.Screen
+        name="Chat"
+        component={ChatNavigator}
+        options={({route}) => ({
+          tabBarVisible: getTabBarVisibility(route),
+        })}
+      />
       <Tab.Screen name="Profile" component={Profile} />
     </Tab.Navigator>
   );

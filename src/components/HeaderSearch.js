@@ -35,8 +35,6 @@ export default function HeaderSearch({
         }}
         onEndEditing={() => {
           setSearch(value);
-          console.log('done search:', search);
-          console.log(setSearch);
         }}
         placeholder={placeholder}
         placeholderTextColor={theme.PRIMARY_COLOR_DIMMED}

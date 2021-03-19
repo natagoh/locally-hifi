@@ -1,52 +1,43 @@
 import * as React from 'react';
-import {Image, View, Text, StyleSheet} from 'react-native';
+import {Image, View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 
 import theme from '../theme.style';
 import NewBadge from './NewBadge';
 
 export default function ChatIntro({name, timestamp, body, isNew, onPress}) {
   return (
-    <View style={styles.container}>
-      <View style={styles.heading}>
-        <Image
-          source={require('./../assets/imgs/watch.jpg')}
-          style={styles.img}
-        />
-        <View style={styles.bodyContainer}>
-          <View style={styles.titleContainer}>
-            <Text style={styles.title}>{name}</Text>
-            <Text style={styles.timestamp}>just now</Text>
-            <NewBadge />
-          </View>
-          <Text style={styles.body}>
-            fabulous bakery hun, definitely check it out!
-          </Text>
+    <TouchableOpacity style={styles.container} onPress={onPress}>
+      <Image
+        source={require('./../assets/imgs/watch.jpg')}
+        style={styles.img}
+      />
+      <View style={styles.bodyContainer}>
+        <View style={styles.titleContainer}>
+          <Text style={styles.title}>{name}</Text>
+          <Text style={styles.timestamp}>just now</Text>
+          <NewBadge />
         </View>
+        <Text style={styles.body}>
+          fabulous bakery hun, definitely check it out!
+        </Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     display: 'flex',
-    flexDirection: 'column',
+    width: '100%',
+    flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-start',
 
     marginVertical: theme.SPACING_MEDIUM,
     padding: theme.SPACING_MEDIUM,
     backgroundColor: theme.POST_BACKGROUND_COLOR,
 
-    width: '100%',
-
     borderRadius: 20,
-  },
-  heading: {
-    width: '100%',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
   },
   img: {
     width: 64,

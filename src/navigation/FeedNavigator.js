@@ -1,26 +1,26 @@
 import * as React from 'react';
-import {useContext} from 'react';
+import {useContext, useState} from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
 import AppContext from '../AppContext';
 import theme from '../theme.style';
 import Feed from '../screens/Feed';
 import FeedShare from '../screens/FeedShare';
-import HomeFilter from '../screens/HomeFilter';
+import Filter from '../screens/Filter';
 import HeaderSearch from '../components/HeaderSearch';
 
 const Stack = createStackNavigator();
 
 export default function FeedNavigator() {
-  const {search, setSearch} = useContext(AppContext);
-
-  console.log('context search:', search);
+  const [search, setSearch] = useState('');
+  const {feedShareSearch, setFeedShareSearch} = useContext(AppContext);
 
   return (
     <Stack.Navigator>
       <Stack.Screen
         name="Feed"
         component={Feed}
+        initialParams={{search}}
         options={{
           headerTitle: (props) => (
             <HeaderSearch
@@ -45,12 +45,13 @@ export default function FeedNavigator() {
       <Stack.Screen
         name="FeedShare"
         component={FeedShare}
+        initialParams={{search: feedShareSearch}}
         options={{
           headerTitle: (props) => (
             <HeaderSearch
               {...props}
-              search={search}
-              setSearch={setSearch}
+              search={feedShareSearch}
+              setSearch={setFeedShareSearch}
               placeholder="find a place to share"
               focusOnEntry={true}
             />
@@ -68,7 +69,7 @@ export default function FeedNavigator() {
       />
       <Stack.Screen
         name="Filter"
-        component={HomeFilter}
+        component={Filter}
         options={{
           headerTintColor: theme.PRIMARY_COLOR,
           headerStyle: {

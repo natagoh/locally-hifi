@@ -11,7 +11,9 @@ import Card from '../components/Card';
 import BaseButton from '../components/BaseButton';
 
 export default function FeedShare({navigation}) {
-  const {search} = useContext(AppContext);
+  const {feedShareSearch} = useContext(AppContext);
+  // const {search} = route.params;
+
   const [cardIds, setCardIds] = useState([]);
 
   console.log('cardIds', cardIds);
@@ -28,18 +30,18 @@ export default function FeedShare({navigation}) {
         }
         onPress={() => navigation.navigate('Filter')}
         text={
-          search.toLowerCase() === 'watch'
+          feedShareSearch.toLowerCase() === 'watch'
             ? `filter ${data.length} results`
             : 'filter'
         }
         style={styles.filterButton}
         textStyle={styles.filterButtonText}
       />
-      {search.length === 0 ? (
+      {feedShareSearch.length === 0 ? (
         <View style={styles.nullTextContainer}>
           <Text style={styles.nullText}>try searching for something!</Text>
         </View>
-      ) : search.toLowerCase() === 'watch' ? (
+      ) : feedShareSearch.toLowerCase() === 'watch' ? (
         <>
           <Text style={styles.hint}>tap the cards you want to share</Text>
           <ScrollView style={styles.scrollView}>

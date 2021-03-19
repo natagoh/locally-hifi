@@ -26,7 +26,23 @@ export default function Chat({navigation}) {
       </View>
       <ChatIntro
         name="Martha"
-        onPress={() => navigation.navigate('FeedShare')}
+        onPress={() => {
+          console.log('chat pressed');
+          navigation.navigate('ChatThread', {
+            first_name: 'Martha',
+            last_name: 'May',
+            messages: [
+              {
+                user: 'Martha May',
+                text: 'fabulous bakery hun, definitely check it out!',
+              },
+              {
+                user: 'Martha May',
+                text: 'fabulous bakery hun, definitely check it out!',
+              },
+            ],
+          });
+        }}
       />
     </View>
   );

@@ -4,9 +4,9 @@ import {SafeAreaView, StyleSheet, View} from 'react-native';
 import Slider from '@react-native-community/slider';
 
 import AppContext from '../AppContext';
-import theme from './../theme.style';
-import FilterValue from './../components/FilterValue';
-import FilterHeading from './../components/FilterHeading';
+import theme from '../theme.style';
+import FilterValue from '../components/FilterValue';
+import FilterHeading from '../components/FilterHeading';
 
 const BUSINESS_FILTERS = ['asian-owned', 'black-owned', 'female-owned'];
 
@@ -19,7 +19,7 @@ const PRODUCT_FILTERS = [
   'eco-friendly',
 ];
 
-export default function HomeFilter() {
+export default function Filter() {
   const {filters, setFilters} = useContext(AppContext);
   let {businessValues, businessTypes, productValues, distance} = filters;
 

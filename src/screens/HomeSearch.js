@@ -1,17 +1,17 @@
 import * as React from 'react';
-import {useContext, useEffect, useState} from 'react';
+import {useEffect, useContext} from 'react';
 import {Text, StyleSheet, View, ScrollView} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
-import data from '../assets/data.json';
 import AppContext from '../AppContext';
+import data from '../assets/data.json';
 import theme from './../theme.style';
 import PillButton from '../components/PillButton';
 import Card from './../components/Card';
 
 export default function HomeSearch({navigation}) {
-  const {search} = useContext(AppContext);
+  const {homeSearch} = useContext(AppContext);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -25,18 +25,18 @@ export default function HomeSearch({navigation}) {
         }
         onPress={() => navigation.navigate('Filter')}
         text={
-          search.toLowerCase() === 'watch'
+          homeSearch.toLowerCase() === 'watch'
             ? `filter ${data.length} results`
             : 'filter'
         }
         style={styles.filterButton}
         textStyle={styles.filterButtonText}
       />
-      {search.length === 0 ? (
+      {homeSearch.length === 0 ? (
         <View style={styles.nullTextContainer}>
           <Text style={styles.nullText}>try searching for something!</Text>
         </View>
-      ) : search.toLowerCase() === 'watch' ? (
+      ) : homeSearch.toLowerCase() === 'watch' ? (
         <ScrollView style={styles.scrollView}>
           {data.map((val, idx) => (
             <Card data={val} key={idx} />

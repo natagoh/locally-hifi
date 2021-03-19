@@ -1,39 +1,31 @@
 import * as React from 'react';
-import {useState, useContext} from 'react';
+import {useContext} from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
 import AppContext from '../AppContext';
 import theme from '../theme.style';
-import Home from '../screens/Home';
-import HomeSearch from '../screens/HomeSearch';
-import Filter from '../screens/Filter';
+import Chat from '../screens/Chat';
+import ChatThread from '../screens/ChatThread';
 import HeaderSearch from '../components/HeaderSearch';
 
 const Stack = createStackNavigator();
 
-export default function HomeNavigator() {
-  const {homeSearch, setHomeSearch} = useContext(AppContext);
+export default function ChatNavigator() {
+  const {search, setSearch} = useContext(AppContext);
 
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Home"
-        component={Home}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Stack.Screen
-        name="Search"
-        component={HomeSearch}
+        name="Chat"
+        component={Chat}
         options={{
           headerTitle: (props) => (
             <HeaderSearch
               {...props}
-              search={homeSearch}
-              setSearch={setHomeSearch}
-              placeholder="search local.ly"
-              focusOnEntry={homeSearch.length === 0}
+              search={search}
+              setSearch={setSearch}
+              placeholder="search chats"
+              focusOnEntry={false}
             />
           ),
           headerTintColor: theme.PRIMARY_COLOR,
@@ -48,9 +40,10 @@ export default function HomeNavigator() {
         }}
       />
       <Stack.Screen
-        name="Filter"
-        component={Filter}
-        options={{
+        name="ChatThread"
+        component={ChatThread}
+        options={({route}) => ({
+          title: `${route.params.first_name} ${route.params.last_name}`,
           headerTintColor: theme.PRIMARY_COLOR,
           headerStyle: {
             backgroundColor: theme.SECONDARY_COLOR,
@@ -60,7 +53,7 @@ export default function HomeNavigator() {
               height: 0, // for iOS
             },
           },
-        }}
+        })}
       />
     </Stack.Navigator>
   );

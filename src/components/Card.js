@@ -6,19 +6,19 @@ import theme from './../theme.style';
 import CardBody from './CardBody';
 import CardButtonGroup from './CardButtonGroup';
 
-// data = {
-//   address: "984 Beverley Road, Manitou, South Dakota, 2122"
-//   company: "Pyramax"
-//   friendsWhoTrust: 61
-//   img: "http://placehold.it/32x32"
-//   numRatings: 560
-//   phone: "+1 (967) 497-3140"
-//   rating: 4.8211
-//   values: (7) ["cillum", "fugiat", "irure", "quis", "sint", "ad", "qui"]
-//   _id: "60543e9c5ba8c546d937f2ed"
-// }
+const defaultData = {
+  address: '984 Beverley Road, Manitou, South Dakota, 2122',
+  company: 'Pyramax',
+  friendsWhoTrust: 61,
+  img: 'http://placehold.it/32x32',
+  numRatings: 560,
+  phone: '+1 (967) 497-3140',
+  rating: 4.8211,
+  values: ['cillum', 'fugiat', 'irure', 'quis', 'sint', 'ad', 'qui'],
+  _id: '60543e9c5ba8c546d937f2ed',
+};
 
-export default function Card({data, onPress, isPressed}) {
+export default function Card({data = defaultData, onPress, isPressed}) {
   const cardButtonData = [
     {
       text: 'save card',
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
 
-    marginVertical: theme.SPACING_MEDIUM,
+    marginVertical: theme.SPACING_SMALL,
     backgroundColor: theme.CARD_BACKGROUND_COLOR,
 
     width: '100%',

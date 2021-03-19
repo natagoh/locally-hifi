@@ -7,7 +7,6 @@ import AppContext from './src/AppContext';
 import NavBar from './src/navigation/NavBar';
 
 export default function App() {
-  const [search, setSearch] = useState('');
   const [filters, setFilters] = useState({
     businessValues: [],
     businessTypes: [],
@@ -15,8 +14,19 @@ export default function App() {
     distance: 0,
   });
 
+  const [homeSearch, setHomeSearch] = useState('');
+  const [feedShareSearch, setFeedShareSearch] = useState('');
+
   return (
-    <AppContext.Provider value={{search, setSearch, filters, setFilters}}>
+    <AppContext.Provider
+      value={{
+        filters,
+        setFilters,
+        homeSearch,
+        setHomeSearch,
+        feedShareSearch,
+        setFeedShareSearch,
+      }}>
       <SafeAreaProvider>
         <NavigationContainer>
           <NavBar />
