@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/Feather';
 
 import theme from './../theme.style';
 import FilterValue from './FilterValue';
+import CardTier from './CardTier';
 
 // if isSaved === true, card should display rewards progress
 export default function CardBody({data, isSaved}) {
@@ -36,14 +37,17 @@ export default function CardBody({data, isSaved}) {
 
   const lastVisit = (
     <View style={styles.section}>
-      <Text style={styles.trustText}>last visit: 3 days ago</Text>
+      <Text>last visit: 3 days ago</Text>
     </View>
   );
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{company}</Text>
       {isSaved ? (
-        <>{lastVisit}</>
+        <>
+          {lastVisit}
+          <CardTier />
+        </>
       ) : (
         <>
           {ratings}

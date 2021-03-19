@@ -19,4 +19,10 @@ export default {
   SPACING_SMALL: 8,
   SPACING_MEDIUM: 16,
   SPACING_LARGE: 24,
+
+  BRONZE: '#6A3805',
+
+  // modal button colors
+  RED_COLOR: '#c86463',
+  GREEN_COLOR: '#4d7b70',
 };

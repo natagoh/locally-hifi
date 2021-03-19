@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: theme.BACKGROUND_COLOR,
     padding: theme.SPACING_MEDIUM,
+    paddingBottom: 0,
   },
   header: {
     width: '100%',
