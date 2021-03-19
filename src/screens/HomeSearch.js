@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {useContext} from 'react';
-import {Text, StyleSheet, View} from 'react-native';
+import {Text, StyleSheet, View, ScrollView} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
@@ -23,7 +23,7 @@ export default function HomeSearch({navigation}) {
           />
         }
         onPress={() => navigation.navigate('Filter')}
-        text="filter"
+        text="filter 15 results"
         style={styles.filterButton}
         textStyle={styles.filterButtonText}
       />
@@ -32,11 +32,13 @@ export default function HomeSearch({navigation}) {
           <Text style={styles.nullText}>try searching for something!</Text>
         </View>
       ) : search.toLowerCase() === 'watch' ? (
-        <>
+        <ScrollView style={styles.scrollView}>
           <Card />
           <Card />
           <Card />
-        </>
+          <Card />
+          <Card />
+        </ScrollView>
       ) : (
         <View style={styles.nullTextContainer}>
           <Text style={styles.nullText}>no results :(</Text>
@@ -54,6 +56,9 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: theme.BACKGROUND_COLOR,
     padding: theme.SPACING_MEDIUM,
+  },
+  scrollView: {
+    width: '100%',
   },
   filterButton: {
     alignSelf: 'flex-start',

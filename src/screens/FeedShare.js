@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {useContext} from 'react';
-import {Dimensions, Text, StyleSheet, View} from 'react-native';
+import {Dimensions, Text, StyleSheet, View, ScrollView} from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
 import AppContext from '../AppContext';
@@ -23,7 +23,7 @@ export default function FeedShare({navigation}) {
           />
         }
         onPress={() => navigation.navigate('Filter')}
-        text="filter"
+        text="filter 15 results"
         style={styles.filterButton}
         textStyle={styles.filterButtonText}
       />
@@ -34,9 +34,11 @@ export default function FeedShare({navigation}) {
       ) : search.toLowerCase() === 'watch' ? (
         <>
           <Text style={styles.hint}>tap the cards you want to share</Text>
-          <Card onPress={() => console.log('yo pressed something')} />
-          <Card />
-          <Card />
+          <ScrollView style={styles.scrollView}>
+            <Card onPress={() => console.log('yo pressed something')} />
+            <Card />
+            <Card />
+          </ScrollView>
         </>
       ) : (
         <View style={styles.nullTextContainer}>
@@ -63,6 +65,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: theme.BACKGROUND_COLOR,
     padding: theme.SPACING_MEDIUM,
+  },
+  scrollView: {
+    width: '100%',
   },
   filterButton: {
     alignSelf: 'flex-start',

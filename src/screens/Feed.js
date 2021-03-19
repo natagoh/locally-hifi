@@ -15,7 +15,7 @@ export default function Feed({navigation}) {
           style={styles.button}
           textStyle={styles.buttonText}
           text="ask for recs"
-          iconRight={
+          iconLeft={
             <Icon size={theme.FONT_SIZE_MEDIUM} color="white" name="edit-3" />
           }
         />
