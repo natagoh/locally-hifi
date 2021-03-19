@@ -13,6 +13,18 @@ import NewBadge from '../components/NewBadge';
 export default function Feed({navigation}) {
   const [isVisible, setIsVisible] = useState(false);
 
+  // text input value
+  let [value, setValue] = useState('');
+
+  const [posts, setPosts] = useState([
+    {
+      name: 'Jacob',
+      timestamp: 'just now',
+      body:
+        'cool and sustainble clothing stores! only in the area for a few more days',
+    },
+  ]);
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -27,7 +39,13 @@ export default function Feed({navigation}) {
           onPress={() => setIsVisible(true)}
         />
       </View>
-      <FeedPost onPress={() => navigation.navigate('FeedShare')} />
+      {posts.map((post, idx) => (
+        <FeedPost
+          data={post}
+          onPress={() => navigation.navigate('FeedShare')}
+          key={idx}
+        />
+      ))}
       {/* modal for asking for recs */}
       <Modal isVisible={isVisible}>
         <ModalContainer>
@@ -50,6 +68,10 @@ export default function Feed({navigation}) {
             numberOfLines={4}
             style={styles.modalInput}
             placeholder="what's on your mind?"
+            onChangeText={(text) => {
+              setValue(text);
+            }}
+            value={value}
           />
           <View style={styles.buttonContainer}>
             <PillButton
@@ -65,6 +87,14 @@ export default function Feed({navigation}) {
               textStyle={styles.modalButtonText}
               text="post!"
               onPress={() => {
+                setPosts([
+                  {
+                    name: 'You',
+                    timestamp: 'just now',
+                    body: value,
+                  },
+                  ...posts,
+                ]);
                 setIsVisible(false);
               }}
               iconRight={

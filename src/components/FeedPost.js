@@ -6,7 +6,55 @@ import theme from '../theme.style';
 import OutlineButton from './OutlineButton';
 import NewBadge from './NewBadge';
 
-export default function FeedPost({name, timestamp, body, isNew, onPress}) {
+export default function FeedPost({data, onPress}) {
+  const {name, timestamp, body} = data;
+  const yourPost = name.toLowerCase() === 'you';
+  const button = (
+    <OutlineButton
+      style={styles.button}
+      textStyle={styles.buttonText}
+      text="share a place"
+      onPress={onPress}
+      iconRight={
+        <Icon
+          size={theme.FONT_SIZE_MEDIUM}
+          color={theme.PRIMARY_COLOR}
+          name="send"
+        />
+      }
+    />
+  );
+  // buttons if you are the author of the post
+  const editorButtons = (
+    <View style={styles.buttonGroup}>
+      <OutlineButton
+        style={[styles.button, styles.deleteButton]}
+        textStyle={[styles.buttonText, styles.deleteButtonText]}
+        text="delete"
+        // TODO: onPress={onPress}
+        iconRight={
+          <Icon
+            size={theme.FONT_SIZE_MEDIUM}
+            color={theme.RED_COLOR}
+            name="trash-2"
+          />
+        }
+      />
+      <OutlineButton
+        style={[styles.button, styles.editButton]}
+        textStyle={styles.buttonText}
+        text="edit"
+        // TODO: onPress={onPress}
+        iconRight={
+          <Icon
+            size={theme.FONT_SIZE_MEDIUM}
+            color={theme.PRIMARY_COLOR}
+            name="edit-2"
+          />
+        }
+      />
+    </View>
+  );
   return (
     <View style={styles.container}>
       <View style={styles.heading}>
@@ -15,30 +63,17 @@ export default function FeedPost({name, timestamp, body, isNew, onPress}) {
           style={styles.img}
         />
         <View>
-          <Text style={styles.title}>Jacob is searching for...</Text>
+          <Text style={styles.title}>
+            {name} {yourPost ? 'are' : 'is'} searching for...
+          </Text>
           <View style={styles.timestampContainer}>
-            <Text style={styles.timestamp}>just now</Text>
+            <Text style={styles.timestamp}>{timestamp}</Text>
             <NewBadge />
           </View>
         </View>
       </View>
-      <Text style={styles.body}>
-        cool and sustainble clothing stores! only in the area for a few more
-        days
-      </Text>
-      <OutlineButton
-        style={styles.button}
-        textStyle={styles.buttonText}
-        text="share a place"
-        onPress={onPress}
-        iconRight={
-          <Icon
-            size={theme.FONT_SIZE_MEDIUM}
-            color={theme.PRIMARY_COLOR}
-            name="send"
-          />
-        }
-      />
+      <Text style={styles.body}>{body}</Text>
+      {yourPost ? editorButtons : button}
     </View>
   );
 }
@@ -93,6 +128,7 @@ const styles = StyleSheet.create({
     color: theme.PRIMARY_COLOR,
     fontSize: theme.FONT_SIZE_MEDIUM,
     marginVertical: theme.SPACING_MEDIUM,
+    alignSelf: 'flex-start',
   },
   button: {
     display: 'flex',
@@ -103,5 +139,22 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: theme.FONT_SIZE_MEDIUM,
+  },
+
+  // button gorup for when you are the post author
+  buttonGroup: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignSelf: 'flex-end',
+  },
+  editButton: {
+    borderColor: theme.GREEN_COLOR,
+  },
+  deleteButton: {
+    borderColor: theme.RED_COLOR,
+    marginRight: theme.SPACING_SMALL,
+  },
+  deleteButtonText: {
+    color: theme.RED_COLOR,
   },
 });
