@@ -6,9 +6,17 @@ import theme from '../theme.style';
 import OutlineButton from './OutlineButton';
 import NewBadge from './NewBadge';
 
-export default function FeedPost({data, onPress}) {
+const defaultData = {
+  name: 'Jacob',
+  timestamp: 'just now',
+  body:
+    'cool and sustainble clothing stores! only in the area for a few more days',
+};
+
+export default function FeedPost({data = defaultData, onPress}) {
   const {name, timestamp, body} = data;
   const yourPost = name.toLowerCase() === 'you';
+
   const button = (
     <OutlineButton
       style={styles.button}
@@ -24,6 +32,7 @@ export default function FeedPost({data, onPress}) {
       }
     />
   );
+
   // buttons if you are the author of the post
   const editorButtons = (
     <View style={styles.buttonGroup}>

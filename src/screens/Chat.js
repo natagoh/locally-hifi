@@ -26,6 +26,7 @@ export default function Chat({navigation}) {
       </View>
       <ChatIntro
         name="Martha"
+        body="fabulous watch shop hun, definitely check it out!"
         onPress={() => {
           console.log('chat pressed');
           navigation.navigate('ChatThread', {
@@ -34,11 +35,7 @@ export default function Chat({navigation}) {
             messages: [
               {
                 user: 'Martha May',
-                text: 'fabulous bakery hun, definitely check it out!',
-              },
-              {
-                user: 'Martha May',
-                text: 'fabulous bakery hun, definitely check it out!',
+                text: 'fabulous watch shop hun, definitely check it out!',
               },
             ],
           });

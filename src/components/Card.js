@@ -18,6 +18,14 @@ const defaultData = {
   _id: '60543e9c5ba8c546d937f2ed',
 };
 
+// const IMAGES = {
+//   '60543e9c5ba8c546d937f2ed': require('./../assets/imgs/watch.jpg'),
+//   '60543e9c5aa9a34b6bfde978': require('./../assets/imgs/watch2.jpg'),
+//   '60543e9c0b6275e164f7e5e5': require('./../assets/imgs/watch4.jpg'),
+//   '60543e9c60a65c68808c3b98': require('./../assets/imgs/watch5.jpg'),
+//   '60543e9c9159a03ba4eb2ac8': require('./../assets/imgs/watch6.JPG'),
+// };
+
 export default function Card({
   data = defaultData,
   onPress,

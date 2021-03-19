@@ -5,7 +5,7 @@
     "rating": 4.8211,
     "numRatings": 560,
     "friendsWhoTrust": 61,
-    "img": "http://placehold.it/32x32",
+    "img": "./../assets/imgs/watch.jpg",
     "phone": "+1 (967) 497-3140",
     "address": "984 Beverley Road, Manitou, South Dakota, 2122",
     "values": ["eco-friendly", "minority-owned"]
@@ -16,7 +16,7 @@
     "rating": 3.9274,
     "numRatings": 919,
     "friendsWhoTrust": 71,
-    "img": "http://placehold.it/32x32",
+    "img": "./../assets/imgs/watch2.jpg",
     "phone": "+1 (934) 456-3244",
     "address": "708 Elliott Place, Leland, Mississippi, 143",
     "values": ["eco-friendly", "minority-owned", "vintage", "quality"]
@@ -27,7 +27,7 @@
     "rating": 4.7231,
     "numRatings": 980,
     "friendsWhoTrust": 96,
-    "img": "http://placehold.it/32x32",
+    "img": "./../assets/imgs/watch4.jpg",
     "phone": "+1 (946) 476-2468",
     "address": "162 Euclid Avenue, Brazos, Michigan, 5829",
     "values": ["eco-friendly", "minority-owned"]
@@ -38,7 +38,7 @@
     "rating": 4.3127,
     "numRatings": 359,
     "friendsWhoTrust": 98,
-    "img": "http://placehold.it/32x32",
+    "img": "./../assets/imgs/watch5.jpg",
     "phone": "+1 (974) 509-3389",
     "address": "685 Vandervoort Place, Riverton, Rhode Island, 434",
     "values": ["eco-friendly", "minority-owned"]
@@ -49,7 +49,7 @@
     "rating": 3.0774,
     "numRatings": 168,
     "friendsWhoTrust": 55,
-    "img": "http://placehold.it/32x32",
+    "img": "./../assets/imgs/watch6.JPG",
     "phone": "+1 (865) 522-3519",
     "address": "319 Throop Avenue, Oneida, Georgia, 2434",
     "values": ["eco-friendly", "minority-owned"]

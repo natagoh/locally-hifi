@@ -17,9 +17,7 @@ export default function ChatIntro({name, timestamp, body, isNew, onPress}) {
           <Text style={styles.timestamp}>just now</Text>
           <NewBadge />
         </View>
-        <Text style={styles.body}>
-          fabulous bakery hun, definitely check it out!
-        </Text>
+        <Text style={styles.body}>{body}</Text>
       </View>
     </TouchableOpacity>
   );
