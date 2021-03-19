@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     color: theme.PRIMARY_COLOR,
   },
   button: {
-    backgroundColor: theme.PRIMARY_COLOR,
+    backgroundColor: theme.PRIMARY_COLOR_75,
     borderWidth: 0,
   },
   buttonText: {
